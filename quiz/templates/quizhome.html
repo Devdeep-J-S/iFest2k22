@@ -1,0 +1,9 @@
+{% load static %}
+{% block content %}
+
+<h1> Welcome to {{ quizname }} Quiz </h1>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Start Quiz</button>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+
+{% block content %}
+
+<div class="main-content">
+    <div class="question">
+        {{puzzle.Data.question}}
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <input id="ans" type="text" name="ans">
+        <button type="submit">Submit</button>
+    </form>    
+    <div class="eval">
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

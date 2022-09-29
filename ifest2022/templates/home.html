@@ -1,0 +1,46 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/hometemp.css' %}">
+    <title>Document</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+        integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-text">
+            <p>Theme will be revealed soon. <br>Meanwhile you can register here.</p>
+        </div>
+
+        <button id="registerbtn"><a href="{% url 'signup' %}">Register</a></button>
+
+        <div class="media">
+            <div class="rounded-social-buttons">
+                <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i
+                        class="fab fa-youtube"></i></a>
+                <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <a class="social-button at" href="www.google.com" target="_blank"><i class="fa fa-at"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

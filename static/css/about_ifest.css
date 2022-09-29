@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier Prime', monospace;
+    box-sizing: border-box;
+}
+
+#bg-stars {
+    overflow: auto;
+}
+
+.heading-about {
+    display: flex;
+    justify-content: stretch;
+}
+
+.about-container {
+    width: fit-content;
+    height: max-content;
+    /* padding: 10%; */
+    display: grid;
+    /* max-height: 300px; */
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+}
+
+.logo-container-laptop {
+    width: inherit;
+    padding-right: 40px;
+    border-right: 10px solid white;
+    margin: auto;
+}
+.logo-container-laptop img {
+    height: 500px;
+    margin: auto;
+}
+
+.logo-container-mobile {
+    display: none;
+}
+
+.logo-text-container {
+    /* width: 60vw; */
+    padding-left: 40px;
+}
+
+.logo-text-container h1 {
+    font-size: 3.9rem;
+    color: white;
+    margin: auto;
+}
+
+/*.heading-about h1 {
+    margin: auto;
+}*/
+
+.logo-text-container p {
+    font-size: 1.3rem;
+    color: white;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 1100px) {
+    .logo-text-container h1 {
+        font-size: 3rem;
+        padding-left: 0.5rem;
+        color: white;
+    }
+    .logo-text-container p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .logo-text-container h1 {
+        font-size: 3rem;
+        padding-left: 0.5rem;
+        color: white;
+        margin: 0;
+        text-align: left;
+        margin: auto 0;
+    }
+    .logo-text-container {
+        padding-left: 0px;
+    }
+    .logo-text-container p {
+        font-size: 1.5rem;
+    }
+    .logo-container-laptop {
+        display: none;
+    }
+    .logo-container-mobile {
+        display: inline-block;
+        padding-right: 0.5rem;
+        border-right: 3px solid white;
+    }
+    .logo-container-mobile img {
+        height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .logo-text-container h1 {
+        font-size: 2rem;
+        padding-left: 0.5rem;
+        color: white;
+    }
+    .logo-text-container p {
+        font-size: 1rem;
+    }
+    .logo-container-laptop {
+        display: none;
+    }
+    .logo-container-mobile {
+        display: inline-block;
+        padding-right: 0.5rem;
+        border-right: 3px solid white;
+    }
+    .logo-container-mobile img {
+        height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .logo-text-container h1 {
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+        color: white;
+    }
+    .logo-text-container p {
+        font-size: 0.8rem;
+    }
+    .logo-container-laptop {
+        display: none;
+    }
+    .logo-container-mobile {
+        display: inline-block;
+        padding-right: 0.5rem;
+        border-right: 3px solid white;
+    }
+    .logo-container-mobile img {
+        height: 3rem;
+    }
+}

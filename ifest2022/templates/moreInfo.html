@@ -1,0 +1,232 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/moreInfoFinal.css' %}">
+
+
+<!--<br> <br>
+<div>
+    <div style="text-align: center;">
+    <img src="{{event.logo.url}}">
+    <h4>{{ event.name }}</h4>
+    </div>
+
+    <br>
+    <div style="margin-left: 2%;">
+        <h4>Info</h4>
+        <ul>
+            <li>{{event.Data.Info}}</li>
+        </ul>
+        <br>
+        <h4>General Rules</h4>
+        <ul>
+            {% for rule in event.Data.GeneralRules %}
+                <li>{{rule}}</li>
+            {% endfor %}
+        </ul>
+        <br><br>
+        <h4>Rounds</h4>
+        <div style="margin-left: 3%;">
+            {% for round in event.Data.Rounds %}
+                <b><p>Round {{round.ID}}</p></b>
+                <div style="margin-left: 2%;">
+                    {% if links %}
+                    <p>Link: <a href={{round.Link}}>{{round.Link}}</a></p>
+                    {% endif %}
+                    <p>Rules: </p>
+                    <ul>
+                        {% for rule in round.Rules %}
+                            <li>{{rule}}</li>
+                        {% endfor %}
+                    </ul>
+                    <p>Judging Criteria : </p>
+                    <ul>
+                        {% for criteria in round.Judging_Criteria %}
+                            <li>{{criteria}}</li>
+                        {% endfor %}
+                    </ul>
+                    <p>Venue: {{round.Venue}}</p>
+                    <p>Time: {{round.Time}}</p>
+                    <p>Date: {{round.Date}}</p>
+                    <p>Contacts: </p>
+                    <ul>
+                        {% for cnt in round.Contact.items %}
+                            <li>{{cnt}}}</li>
+                        {% endfor %}
+                    </ul>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+        <h4>Prize: {{event.Data.Prize}}</h4>
+        <br>
+    </div>
+
+    <div style="text-align: center; margin: 20px;">
+    {% if now.date < event.registrationDeadline.date %}
+        {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">{{button}}</button>
+        </form>
+        {% else %}
+        <form method="GET" action="{% url 'login_page' %}">
+            {% csrf_token %}
+            <button type="submit">{{button}}</button>
+        </form>
+        {% endif %}
+    {% elif now.date == event.registrationDeadline.date %}
+        {% if now.time < event.registrationDeadline.time %}
+            {% if user.is_authenticated %}
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit">{{button}}</button>
+            </form>
+            {% else %}
+            <form method="GET" action="{% url 'login_page' %}">
+                {% csrf_token %}
+                <button type="submit">{{button}}</button>
+            </form>
+            {% endif %}
+        {% else %}
+            <h5>Registration Closed</h5>
+        {% endif %}
+    {% else %}
+        <h5>Registration Closed</h5>
+    {% endif %}
+    </div>
+</div>-->
+
+<div class="mInfo-main">
+        <div class="main-content">
+            <div class="event-name">
+                <h1 class="event-name-heading">{{ event.name }}</h1>
+                <div class="event-image">
+                    <img src='../../static/images/{{event.name|add:".png"}}'/>
+                </div>
+            </div>
+            <div class="event-info">
+                <h1 class="event-info-heading">Information</h1>
+                <p>
+                    {{event.Data.Info}}
+                </p>
+            </div>
+
+            <div class="event-generalrules">
+                    <h1 class="event-generalrules-heading">General Rules</h1>
+                    <ul>
+                        {% for rule in event.Data.GeneralRules %}
+                         <li>{{rule}}</li>
+                         {% endfor %}
+                    </ul>
+                </div>
+
+            {% if event.Rounds %}
+            <div class="event-rounds">
+                <h1 class="event-rounds-heading"> Rounds</h1>
+
+                {% for round in event.Data.Rounds %}
+
+                <div class="round-info">
+
+                   <h2 class="round-heading" arg="body-{{round.ID}}" onclick="toggleDisplay()">Round {{round.ID}}</h2>
+                    <div class="round-display-toggle" style="display: none;" id="body-{{round.ID}}">
+                    <p class="round-rules">Rules:</p>
+                    <div class="round-rules-description">
+                    <ul>
+                        {% for rule in round.Rules %}
+                            <li>{{rule}}</li>
+                         {% endfor %}
+                    </ul>
+                    </div>
+                    <!--<p class="judging-criteria">Judging Criteria :</p>
+                    <ul class="judging-points">
+                         {% for criteria in round.Judging_Criteria %}
+                            <li>{{criteria}}</li>
+                         {% endfor %}
+                    </ul>
+                    <p class="round-venue">Venue: {{round.Venue}}</p>
+                    <p class="round-time">Time: {{round.Time}}</p>
+                    <p class="round-date">Date: {{round.Date}}</p>
+                    <p class="round-contact">Contacts:</p>
+                    <ul class="round-contact-list">
+                        {% for cnt in round.Contact.items %}
+                        <li>{{cnt}}}</li>
+                        {% endfor %}
+                    </ul>-->
+                    <br />
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if event.Data.Problem_Statements %}
+            <div class="round-link">
+                <h1 class="event-info-heading">Problem Statements: <a href="https://{{ event.Data.Problem_Statements }}" target="_blank">Link</a></h1>
+            </div>
+            {% endif %}
+            {% if user.is_authenticated and event.Data.Link %}
+                <div class="round-link">
+                    <h1 class="event-info-heading">Link: <a href="https://{{ event.Data.Link }}" target="_blank">Click On Me</a></h1>
+                </div>
+            {% endif %}
+            <div class="event-prize">
+                <h1 class="prize-heading">Prize: {{event.Data.Prize}}</h1>
+                <!--<ul>
+                    <li class="prizemoney">{{event.Data.Info}}</li>
+                </ul>-->
+            </div>
+            <br>
+
+            <div class="event-registeration">
+                {% if now.date < event.registrationDeadline.date %}
+                    {% if user.is_authenticated %}
+                    <form method="POST">
+                    {% csrf_token %}
+                        <button type="submit" class="btn-registeration">{{button}}</button>
+                        <br><br>
+                    </form>
+                    {% else %}
+                    <form method="GET" action="{% url 'login_page' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-registeration">{{button}}</button>
+                        <br><br>
+                    </form>
+                    {% endif %}
+                {% elif now.date == event.registrationDeadline.date %}
+                    {% if now.time < event.registrationDeadline.time %}
+                        {% if user.is_authenticated %}
+                        <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-registeration">{{button}}</button>
+                            <br><br>
+                        </form>
+                        {% else %}
+                        <form method="GET" action="{% url 'login_page' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-registeration">{{button}}</button>
+                            <br><br>
+                        </form>
+                        {% endif %}
+                    {% else %}
+                    <div class="registration-verdict">
+                        <h1 class="text-red blink-hard">Registration Closed!! </h1>
+                    </div>
+                    {% endif %}
+                {% else %}
+                    <div class="registration-verdict">
+                        <h1 class="text-red blink-hard">Registration Closed!! </h1>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+
+<script src="{% static 'js/moreInfo.js' %}"></script>
+
+{% endblock %}

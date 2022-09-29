@@ -1,0 +1,266 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/members.css' %}" />
+
+
+<div class="members-content">
+      <header class="members-header">
+        <h1 class="headingMembers">I.FEST TEAM</h1>
+      </header>
+
+      <!-- PR and Marketing -->
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "pr-display-toggle" onclick="toggleDisplay()"
+          > PR and Marketing</h2>
+          <div class="members-container" id="pr-display-toggle">
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Siddharth Rathod.jpg' %}"
+                alt=""
+                srcset=""
+              />
+              <p class="membersName">Siddharth Rathod</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Ashish Dhami.png' %}" alt="" />
+              <p class="membersName">Ashish Dhami</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Jeel Faldu.jpg' %}" alt="" />
+              <p class="membersName">Jeel Faldu</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Dev Jadav.jpg' %}" alt="" />
+              <p class="membersName">Dev Jadav</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Mukund Ladani.jpg' %}" alt="" />
+              <p class="membersName">Mukund Ladani</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Ayush Jain.jpg' %}" alt="" />
+              <p class="membersName">Ayush Jain</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sponsership -->
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "sponsers-display-toggle" onclick="toggleDisplay()" >Sponsorship</h2>
+          <div class="members-container" id="sponsers-display-toggle" style="display:none">
+            <div>
+              <img class="membersImage" src="{% static 'images/Prabhav Shah.jpg' %}" alt="" />
+              <p class="membersName">Prabhav Shah</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Fenil Kamdar.jpg' %}" alt="" />
+              <p class="membersName">Fenil Kamdar</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Sharvil Sheth.jpg' %}" alt="" />
+              <p class="membersName">Sharvil Sheth</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Aryan Shah.jpg' %}" alt="" />
+              <p class="membersName">Aryan Shah</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/HemangJoshi.jpg' %}" alt="" />
+              <p class="membersName">Hemang Joshi</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Om Jhaveri.jpg' %}" alt="" />
+              <p class="membersName">Om Jhaveri</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Management -->
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "event-display-toggle" onclick="toggleDisplay()">Event Management</h2>
+          <div class="members-container" id="event-display-toggle" style="display:none">
+            <div>
+              <img class="membersImage" src="{% static 'images/Nirmit Ghughu.jpg' %}" alt="" />
+              <p class="membersName">Nirmit Ghughu</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Rinkal Naik.jpg' %}" alt="" />
+              <p class="membersName">Rinkal Naik</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Mohil_Desai.jpg' %}" alt="" />
+              <p class="membersName">Mohil Desai</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Darshan Kheni.jpg' %}" alt="" />
+              <p class="membersName">Darshan Kheni</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Aastha Shetty.jpg' %}" alt="" />
+              <p class="membersName">Aastha Shetty</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Digital Designing -->
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "digital-display-toggle" onclick="toggleDisplay()">Digital Designing</h2>
+          <div class="members-container" id="digital-display-toggle" style="display:none">
+            <div>
+              <img class="membersImage" src="{% static 'images/Jaimit Joshi.jpg' %}" alt="" />
+              <p class="membersName">Jaimit Joshi</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Aditya Nawal.jpeg' %}" alt="" />
+              <p class="membersName">Aditya Nawal</p>
+            </div>
+
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Prathav Kevadiya.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Prathav Kevadiya</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Writing -->
+
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "content-display-toggle" onclick="toggleDisplay()">Content Writing</h2>
+          <div class="members-container" id="content-display-toggle" style="display:none">
+            <div>
+              <img class="membersImage" src="{% static 'images/Richa Sharma.JPG' %}" alt="" />
+              <p class="membersName">Richa Sharma</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Nisha Yadav.JPG' %}" alt="" />
+              <p class="membersName">Nisha Yadav</p>
+            </div>
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Priyanshi Parmar.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Priyanshi Parmar</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Web Development Team -->
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "web-display-toggle" onclick="toggleDisplay()">Web Development Team</h2>
+          <div class="members-container"  id="web-display-toggle" style="display:none">
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Akshita_Jindal.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Akshita Jindal</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Ajaysinh Rajput.jpg' %}" alt="" />
+              <p class="membersName">Ajaysinh Rajput</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Ayush Khamar.jpg' %}" alt="" />
+              <p class="membersName">Ayush Khamar</p>
+            </div>
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Nevil Dalsania.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Nevil Dalsania</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Isha Shah.jpg' %}" alt="" />
+              <p class="membersName">Isha Shah</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Shrey Pobaru.jpg' %}" alt="" />
+              <p class="membersName">Shrey Pobaru</p>
+            </div>
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Harshkumar Metkel.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Harshkumar Metkel</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Kavan Buch.jpg' %}" alt="" />
+              <p class="membersName">Kavan Buch</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Lalit Kumar.jpg' %}" alt="" />
+              <p class="membersName">Lalit Kumar</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Shyam_Butani.jpg' %}" alt="" />
+              <p class="membersName">Shyam Butani</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mentors -->
+      <section class="membersSection">
+        <div class="members-box">
+          <h2 class="members-headingBox" arg = "mentors-display-toggle" onclick="toggleDisplay()">Mentors</h2>
+          <div class="members-container" id="mentors-display-toggle" style="display:none">
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/DevanshuVithlani.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Devanshu Vithlani</p>
+            </div>
+            <div>
+              <img
+                class="membersImage"
+                src="{% static 'images/Devyani Panchal.jpg' %}"
+                alt=""
+              />
+              <p class="membersName">Devyani Panchal</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Madhav Choksi.jpg' %}" alt="" />
+              <p class="membersName">Madhvendra Choksi</p>
+            </div>
+            <div>
+              <img class="membersImage" src="{% static 'images/Visaj Shah.png' %}" alt="" />
+              <p class="membersName">Visaj Shah</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+<script src="{% static 'js/members.js' %}"></script>
+
+{% endblock %}

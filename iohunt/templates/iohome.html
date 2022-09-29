@@ -1,0 +1,18 @@
+{% load static %}
+{% block content %}
+
+<h1> Welcome to IO Hunt </h1>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Start Hunt</button>
+    <br>
+    <br>
+    <div class="messages">    
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    </div>
+</form>
+{% endblock %}

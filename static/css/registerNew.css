@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Geo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace;
+  box-sizing: border-box;
+}
+
+#bg-stars {
+  overflow-y: hidden;
+}
+
+.footer-container {
+  display: none;
+}
+
+.register {
+  display: grid;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-content: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.main-container .box {
+  position: relative;
+  width: 400px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.main-container .box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  filter: blur(30px);
+}
+
+.main-container .box:nth-child(1)::before,
+.main-container .box:nth-child(1)::after {
+  background: linear-gradient(45deg, #e7ff0f, #ff2802);
+}
+
+.main-container .box .span1 {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.main-container .box .span1::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 86, 8, 0.37);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px, rgba(0, 0, 0, 0.05);
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+}
+
+.main-container .box .span1::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgba(173, 202, 11, 0.1);
+  backdrop-filter: blur(10px);
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px, rgba(0, 0, 0, 0.05);
+  animation-delay: -1s;
+}
+
+.main-container .box .content {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  top: 20px;
+  right: -20px;
+  width: 400px;
+  height: fit-content;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(151, 122, 122, 0.1);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+  transition: 0.5s;
+  color: white;
+  z-index: 1;
+}
+
+.register-btn {
+  font-weight: 800;
+  background-color: white;
+  display: flex;
+  align-content: center;
+  outline: none;
+  font-size: 1.2em;
+  border: 1.5px solid black;
+  transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  box-shadow: 0 3px 10px 0px black, 0 1px 4px 1px black;
+  letter-spacing: 0.1em;
+}
+
+.razorpay_logo {
+  background-color: black;
+  width: 100%;
+}
+
+.or-word {
+  color: black;
+  font-size: 1.2em;
+  font-weight: 900;
+  margin: 0.5em auto;
+}
+
+.register_cancel_btn,
+.razorpay-payment-button {
+  font-size: 1.2em;
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  font-weight: 800;
+  justify-content: center;
+  outline: none;
+  font-size: 1em;
+  width: 100%;
+  border: 1.5px solid black;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.register_cancel_btn:hover,
+.razorpay-payment-button:hover {
+  box-shadow: 0 3px 10px 0px black, 0 1px 4px 1px black;
+  letter-spacing: 0.1em;
+}
+
+@media only screen and (max-width: 480px) {
+  .main-container .box {
+    width: 300px;
+  }
+  .main-container .box .content {
+    width: 300px;
+  }
+  .register_cancel_btn,
+  .register-btn {
+    font-size: 0.9em;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .main-container .box {
+    width: 220px;
+  }
+  .main-container .box .content {
+    top: 10px;
+    right: -10px;
+    width: 220px;
+  }
+  .register_cancel_btn,
+  .register-btn {
+    font-size: 0.8em;
+  }
+  .or-word {
+    font-size: 0.8em;
+  }
+}

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier Prime', monospace;
+    box-sizing: border-box;
+}
+
+.OuterDiv {
+    margin: 0;
+    position: relative;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.profile-text {
+    font-size: 2.5em;
+    text-align: center;
+    padding-left: 0%;
+    color: whitesmoke;
+    text-shadow: 0 4px black;
+    margin-top: 43px;
+    font-weight: 800;
+}
+
+.text1 {
+    text-align: center;
+    margin-top: -20px;
+    color: #fff;
+}
+
+.image {
+    text-align: center;
+    width: 200px;
+    /* Container's dimensions */
+    height: 200px;
+    /* -webkit-border-radius: 75%; */
+    /* -moz-border-radius: 75%; */
+    box-shadow: 0 0 0 1px #eee;
+    background-size: cover;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    align-content: center;
+}
+
+.trick {
+    display: inline-block;
+    vertical-align: middle;
+    height: 150px;
+}
+
+.image:hover {
+    box-shadow: 0px 5px 20px 0.9px #3f3f3f;
+}
+
+.image:hover {
+    -webkit-transform: scale(1.12);
+    transform: scale(1.12);
+    -webkit-transition: 1.6s ease-in-out;
+    transition: 1.6s ease-in-out;
+}
+
+.trick:hover img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+#overlay {
+    /* -webkit-border-radius: 50%; */
+    /* -moz-border-radius: 50%; */
+    padding: 0 0 0 0;
+    opacity: 1;
+    /* -webkit-transition: opacity 2.25s ease; */
+    /* -moz-transition: opacity 10.25s ease; */
+}
+
+#box:hover #overlay {
+    opacity: 1;
+}
+
+.panel-group {
+    width: max-content;
+    margin: auto;
+    max-width: 100%;
+}
+
+.panel-heading {
+    background-color: transparent !important;
+}
+
+.panel-body {
+    color: whitesmoke;
+    text-shadow: 0 3px black;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: max-content;
+}
+
+.title {
+    text-align: center;
+    background-color: transparent;
+    color: #000;
+    font-weight: 300;
+    font-size: 15px;
+    max-width: 100%;
+}
+
+#accordion {
+    background-color: transparent;
+    max-width: 100%;
+    margin-bottom: 200px;
+}
+
+.btn-outline {
+    color: inherit;
+    transition: all 1.4s;
+    background-color: transparent;
+}
+/* button CSS */
+
+.btn-danger.btn-outline {
+    margin-top: 9px;
+    background-color: transparent;
+    color: #000;
+    border-color: #000;
+    padding: auto;
+    padding: 10px 0px 10px 0px;
+    margin: 1px 5px 1px 0px;
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    max-width: 100%;
+}
+
+#editprofile {
+    width: inherit;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#editprofile button {
+    width: 100px;
+    border-radius: 0.5em;
+}
+
+#editprofile button:hover {
+    box-shadow: 0 2px 3px 5px black, 0 1px 25px 2px whitesmoke,
+        0 2px 5px 2px black;
+    cursor: pointer;
+    background-color: white;
+}
+
+#editprofile button:hover a {
+    letter-spacing: 0.1em;
+}
+
+#editprofile a {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #000;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 480px) {
+    .profile-text {
+        font-size: 1.5em;
+    }
+    .panel-body {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+    .profile-text {
+        font-size: 1.5em;
+    }
+    .panel-body {
+        font-size: 0.8em;
+    }
+}

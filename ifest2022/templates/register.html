@@ -1,0 +1,140 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/registerNew.css' %}">
+
+<!--<style>
+      * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+        font-family: cursive;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-color: #f1f5f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        background-color: white;
+        padding: 25px;
+        border: 1px solid #bbbbbb;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 25%);
+      }
+      .title {
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      .muted {
+        color: #8e7f7f;
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .btn_container {
+        padding: 20px;
+        text-align: center;
+      }
+      .btn {
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 4px 8px;
+        background-color: #ffaaa7;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+</style>-->
+
+<!--<div class="card">
+        <div class="btn_container">
+            <button class="btn" id="pay-btn" type="submit">Register</button>
+        </div>
+</div>-->
+<div class="register">
+            <div class="main-container">
+                <div class="box">
+                    <span class="span1"></span>
+                    <span class="span2"></span>
+                    <div class="content">
+{% if payment %}
+                        <p style="font-size: 30px; font-weight: bold; margin-bottom: 5px;">Pay via</p>
+            <form action="{% url 'paymenthandler' %}" method="POST">
+                {% csrf_token %}
+            <script
+                src="https://checkout.razorpay.com/v1/checkout.js"
+                data-key="{{razor_key_id}}"
+                data-amount="{{payment.amount}}"
+                data-currency="{{payment.currency}}"
+                data-order_id="{{payment.id}}"
+                data-buttontext="               "
+                data-name="iFest 2021"
+                data-description="Pay in order to register."
+                data-image="{% static 'images/i.Fest_logo_new.png' %}"
+                data-prefill.name="{{userProfile.first_name}} {{userProfile.last_name}}"
+                data-prefill.contact="{{userProfile.profile.contactNumber}}"
+                data-prefill.email="{{userProfile.email}}"
+                data-theme.color="#528FF0"
+            ></script>
+
+
+
+            <input type="hidden" custom="Hidden Element" class="razorpay_btn" name="hidden">
+
+            </form>
+
+            <!--<button class="register-btn" id="pay-btn">
+                Pay Using
+                <img src="{% static 'images/razorpay_logo.png' %}" alt="" class="razorpay_logo"/>
+            </button>-->
+            <span class="or-word">OR</span>
+            <!--<button class="btn" id="pay-btn">Pay using razorpay</button>-->
+        {% endif %}
+
+<form action="paymenthandler/?username={{ userProfile.username }}" method="POST">
+    <button type="submit" class="register_cancel_btn">Cancel</button>
+</form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- Razorpay's Javascript code. -->
+<!--<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+
+      key: "rzp_live_PMF10rsYmShqQD",
+
+      amount: "{{ payment.amount }}",
+      currency: "{{ payment.currency }}",
+
+      name: "Dj Razorpay",
+
+      order_id: "{{ payment.id }}",
+      callback_url: "{{ callback_url }}",
+    };
+
+    // initialise razorpay with the options.
+    var rzp1 = new Razorpay(options);
+
+    // add event listener to the payment button.
+    document.getElementById("pay-btn").onclick = function (e) {
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>-->
+
+{% endblock %}

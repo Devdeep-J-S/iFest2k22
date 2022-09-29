@@ -1,0 +1,62 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/eventspage.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!--<video autoplay muted loop id="myVideo">
+        <source src="{% static 'images/v.mp4' %}" type="video/mp4">
+    </video>-->
+    <div class="heading">
+        {% if dashboard %}
+        <h1>Dashboard</h1>
+        {% else %}
+        <h1>I.FEST EVENTS</h1>
+        {% endif %}
+    </div>
+
+    {% if messages %}
+    {% for message in messages %}
+<br>
+        <h6 id="message" style="text-align: center;">{{ message }}</h6>
+    {% endfor %}
+{% endif %}
+
+
+    <div class="container">
+        {% if events %}
+        {% for event in events %}
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <img src='../../static/images/{{event.name|add:".png"}}'>
+                <h2><i class="fas"></i>{{ event.name }}</h2>
+                <p>
+                    Date: {{event.Data.Date}}<br>
+                    Time: {{event.Data.Time}}<br>
+                    <!-- Venue: {{event.Data.Venue}}-->
+                </p>
+                <!--<button class="btn"><a class="moreInfo" href="moreInfo/?id={{ event.id }}">Read More</a></button>-->
+                <a href="moreInfo/?id={{ event.id }}" id="info"><button class="btn">Read More</button></a>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+<!--{% if events %}
+{% for event in events %}
+<br> <br>
+<div>
+<img src="{{event.logo.url}}">
+<h4>{{ event.name }}</h4>
+<a href="moreInfo/?id={{ event.id }}">More Information</a>
+</div>
+{% endfor %}
+{% endif %}-->
+
+<script src="{% static 'js/eventspage.js' %}"></script>
+
+{% endblock %}

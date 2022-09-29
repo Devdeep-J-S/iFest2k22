@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/pronites.css' %}">
+
+<div class="moodboard">
+            <img src="{% static 'images/webfinal.png' %}" alt="" srcset="">
+        </div>
+        <div class="artistcontainer">
+            <div class="artistbox" id="artistbox1">
+                <div class="imagebox" id="imagebox1">
+                    <img src="{% static 'images/anuv-jain.jpg' %}" alt="" srcset=" ">
+                </div>
+                <div class="contentbox">
+                    Anuv Jain, who is an emerging indie music sensation. He is a singer, lyricist, and composer. He has his own style of tracks wherein a pleasant and soothing composition is accompanied by enduring lyrics that resonates with a vast audience. Many of his songs, including the likes of Baarishein and Mishri, have achieved over a million streams on Spotify.
+                </div>
+            </div>
+            <div class="artistbox" id="artistbox2">
+                <div class="contentbox">
+                    Vipul Goyal, one of India’s top standup comedians and the man behind the success of the hugely popular TVF web series 'Humorously Yours'. Although he did graduate with an electrical engineering degree from IIT Bombay, he soon realised that his heart was in HR - Humour Resources, and has garnered more than 50 million views on his youtube channel. Many of his jokes and punchlines such as "Aukaat Hai Toh Khareed lo" and "Woh The Papa" have gained cult status.
+                </div>
+                <div class="imagebox" id="imagebox2">
+                    <img src="{% static 'images/vipul-goyal.jpg' %}" alt="" srcset=" ">
+                </div>
+            </div>
+        </div>
+        <div class="portraitartistcontainer">
+            <div class="portrait-imagebox"><img src="{% static 'images/anuv-mobile.png' %}" alt="" srcset=""></div>
+            <div class="portrait-contentbox">
+                Anuv Jain, who is an emerging indie music sensation. He is a singer, lyricist, and composer. He has his own style of tracks wherein a pleasant and soothing composition is accompanied by enduring lyrics that resonates with a vast audience. Many of his songs, including the likes of Baarishein and Mishri, have achieved over a million streams on Spotify.
+            </div>
+            <div class="portrait-imagebox"><img src="{% static 'images/vipul-mobile.png' %}" alt="" srcset=""></div>
+            <div class="portrait-contentbox">
+                Vipul Goyal, one of India’s top standup comedians and the man behind the success of the hugely popular TVF web series 'Humorously Yours'. Although he did graduate with an electrical engineering degree from IIT Bombay, he soon realised that his heart was in HR - Humour Resources, and has garnered more than 50 million views on his youtube channel. Many of his jokes and punchlines such as "Aukaat Hai Toh Khareed lo" and "Woh The Papa" have gained cult status.
+            </div>
+        </div>
+
+{% endblock %}

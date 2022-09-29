@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier Prime', monospace;
+    box-sizing: border-box;
+}
+
+#bg-stars {
+    overflow: auto;
+}
+
+#logo-navbar {
+    width: 80%;
+}
+
+#open_icon {
+    position: fixed;
+    top: 4%;
+    left: 2%;
+    z-index: 75;
+}
+
+#open_icon button {
+    background-color: transparent;
+    color: white;
+    padding: 2px 12px;
+    outline: none;
+    font-size: 2em;
+    font-weight: 800;
+    border-radius: 5px;
+    border: none;
+    z-index: 75;
+    transition: all 0.5s ease-in-out;
+}
+
+#open_icon button:hover {
+    box-shadow: 0 0 12px cyan, 0 0 20px whitesmoke, 0 0 7px cyan, 0 0 20px cyan,
+        0 0 50px cyan, 0 0 100px cyan;
+    font-size: 2.1em;
+    font-weight: 900;
+}
+
+
+.navbar-container {
+    height: 100vh;
+    background-color: rgba(8, 8, 46, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0%;
+    transform: translateX(-250px);
+    transition: transform 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.navbar-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.closing-btn {
+    color: white;
+    font-size: 2em;
+    transition: 0.5s all ease-in-out;
+    margin-top: 0.8em;
+    width: 80%;
+}
+
+.closing-btn:hover {
+    text-shadow: 0 0 12px red, 0 0 20px whitesmoke, 0 0 7px red, 0 0 20px red,
+        0 0 50px red, 0 0 100px red;
+}
+
+.navbar-sidebar a {
+    width: 100%;
+}
+
+.navbar-sidebar .logo-navbar {
+    width: 17.5em;
+    /* margin-top: auto; */
+}
+
+.sidebar-all-links {
+    display: grid;
+    align-content: space-between;
+}
+
+.nav-links-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+    padding: 1em;
+    overflow-y:scroll;
+}
+
+.nav-links-container::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links-container a {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: whitesmoke;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-links-container a:hover {
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    text-shadow: 0 0 15px cyan, 0 0 20px whitesmoke, 0 0 7px cyan, 0 0 20px cyan,
+        0 0 50px cyan, 0 0 100px cyan;
+}
+
+#navbar-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2em;
+    align-self:center;
+    /* margin-top: auto; */
+    margin-bottom: auto;
+    overflow-y:scroll;
+}
+
+#navbar-buttons::-webkit-scrollbar {
+    display: none;
+}
+
+#navbar-buttons button {
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    padding: 5px;
+    /* margin: auto 20px; */
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+#navbar-buttons button a {
+    color: whitesmoke;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+#navbar-buttons button:hover {
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    text-shadow: 0 0 15px cyan, 0 0 20px whitesmoke, 0 0 7px cyan, 0 0 20px cyan,
+        0 0 50px cyan, 0 0 100px cyan;
+    animation: buttonHover 0.7s ease-in 0.1s 1 forwards;
+}
+
+.phone-daiict-logo {
+    justify-content: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+@keyframes buttonHover {
+    100% {
+        border: 2px solid transparent;
+    }
+    75% {
+        border: 2px solid rgba(255, 255, 255, 0.151);
+        /* border-radius: 2.5px; */
+    }
+    50% {
+        border: 2px solid rgba(255, 255, 255, 0.507);
+        /* border-radius: 5px; */
+    }
+    25% {
+        border: 2px solid rgba(255, 255, 255, 0.774);
+        /* border-radius: 7.5px; */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar-container {
+        transform: translateX(-100vw);
+    }
+    .navbar-sidebar {
+        width: 100vw;
+    }
+    #open_icon {
+        top: 3%;
+        left: 5%;
+    }
+    #open_icon button {
+        font-size: 1.8em;
+    }
+    #open_icon button:hover {
+        font-size: 1.6em;
+    }
+    .phone-daiict-logo {
+        display: flex;
+    }
+    .laptop-daiict-logo {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .nav-links-container a {
+        font-size: 1.35rem;
+    }
+    #navbar-buttons button a {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .nav-links-container a {
+        font-size: 1.2rem;
+    }
+    #navbar-buttons button a {
+        font-size: 0.8em;
+    }
+    .nav-links-container {
+        row-gap: 0.75em;
+    }
+    #navbar-buttons {
+        row-gap: 1em;
+    }
+    .navbar-sidebar .logo-navbar {
+        width: 12.5em
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .nav-links-container a {
+        font-size: 1.2rem;
+    }
+    #navbar-buttons button a {
+        font-size: 0.8em;
+    }
+    .nav-links-container {
+        row-gap: 0.5em;
+    }
+    #navbar-buttons {
+        row-gap: 0.5em;
+    }
+    .navbar-sidebar .logo-navbar {
+        width: 12.5em;
+        margin-top: 0;
+    }
+    #navbar-buttons button {
+        border: none;
+        font-size: 1.3rem;
+        padding: 0px;
+    }
+}

@@ -1,0 +1,73 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}"/>
+
+<body class="text-center">
+        <div class="login-container">
+            <div class="main-container">
+                <div class="box">
+                    <span class="span1"></span>
+                    <span class="span2"></span>
+                    <div class="content">
+
+<br>
+                        <h1> Edit Profile </h1>
+
+                        <br>
+
+
+{% if messages %}
+    {% for message in messages %}
+        <h6 id="message">{{ message }}</h6>
+    {% endfor %}
+{% endif %}
+
+<form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Name</label>
+        <!--{{form.first_name.label}}-->
+        {{form.first_name}}
+        </p>
+
+        <!--<p>
+        {{form.last_name.label}}
+        {{form.last_name}}
+        </p>-->
+
+        <!--<p>
+            <label>Date of Birth</label>
+        {{form.DOB}}
+        </p>-->
+
+        <p>
+        {{form.University.label}}
+        {{form.University}}
+        </p>
+
+        <p>
+            <label>Contact Number</label>
+        {{form.contactNumber}}
+        </p>
+
+        <div class="btn_container">
+            <button class="back-btn"><a href="{% url 'profile' %}"> Back </a></button>
+        <button class="submit-btn" type="submit">Submit</button>
+        </div>
+
+</form>
+
+    <p class="formerrors">
+    {{form.errors}}
+    </p>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+{% endblock %}

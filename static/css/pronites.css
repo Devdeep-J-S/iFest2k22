@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+body{
+    font-family: 'Courier Prime', sans-serif;
+    
+}
+.moodboard {
+    min-height: auto;
+    /* max-width: 80vw; */
+    background-attachment: scroll;
+    padding: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-image: url(./webfinal.png); */
+    background-position: center;
+    margin-bottom: 5vh;
+    
+
+}
+.pronites-heading{
+    text-align: center;
+    margin:0.6em;
+    padding: 2%;
+    font-size: 2.4em;
+    font-family: 'Geo', sans-serif;
+}
+.moodboard img{
+    width: 100vw;
+}
+.artistcontainer{
+    height: auto;
+    padding: 1.5%;
+}
+.artistbox{
+    box-shadow: 0 0 17px 3px #005bff,0 0 10px 3px #28a788;
+    padding: 2%;
+    margin: 4% 2%;
+    /*color: #005bff;*/
+    border-radius: 5px;
+    /* border: 2px solid blue; */
+    
+}
+.imagebox {
+    height: 100%;
+    
+    width: auto;
+    display: block;
+}
+.imagebox img{
+    height: 100%;
+    width: 80%;
+}
+.artistbox{
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: 30% 70%;
+}
+#artistbox2{
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: 70% 30%;
+
+
+} 
+#imagebox2 {
+    display: flex;
+    justify-content: right;
+}
+.portraitartistcontainer{
+    display: none;
+}
+.contentbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+
+}
+@media only screen and (max-width: 1450px) {
+    .contentbox{
+        font-size: 1.3em;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .contentbox{
+        font-size: 1em;
+    }
+}
+ @media only screen and (max-width: 500px) {
+    .artistcontainer,.moodboard {
+      display: none;
+    }
+    .portraitartistcontainer{
+        display: block;
+    }
+    .portrait-imagebox{
+        width:90vw;
+        margin: auto;
+    }
+    .portrait-imagebox img{
+        width:85vw;
+        margin: auto;
+    }
+    .portrait-contentbox{
+        margin: 1em;
+        padding: 2%;
+        text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 150px #1167b1, 0 0 20px #1167b1, 0 0 25px #1167b1, 0 0 30px #1167b1, 0 0 35px #1167b1;
+        text-align: justify;
+    }
+    
+  } 

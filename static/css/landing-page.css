@@ -1,0 +1,368 @@
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.asteroid-ship{
+    position: relative;
+    top: -6px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.logo{
+    position: absolute;
+    background-image: url(/static/images/landing/logo.png);
+    background-size: cover;
+    right: 4%;
+    height: 38vh;
+    width: 38vw;
+    object-fit: contain;
+    z-index: 11;
+}
+
+.gradient{
+    position: absolute;
+    background: linear-gradient(transparent 80%,#12141f 100%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+}
+.mobile-gradient{
+    position: absolute;
+    background: linear-gradient(transparent 80%,#12141f 100%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+}
+.gradient1{
+    position: absolute;
+    top: 100vh;
+    background: linear-gradient(#12141f 0%,transparent 20%);
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+}
+
+.bg{
+    position: absolute;
+    background-image: url(/static/images/landing/new4.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.space-ship{
+    position: absolute;
+    background-image: url(/static/images/landing/disk-part2new1.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    transform-origin: 38% 50%;
+    animation: rotate 30s infinite;
+}
+
+.space-ship-static{
+    position: absolute;
+    background-image: url(/static/images/landing/disk-part2new1.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    transform-origin: 38% 50%;
+}
+
+.tower{
+    position: absolute;
+    background-image: url(/static/images/landing/disk-part3.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@keyframes rotate{
+    0% {}
+    33% {transform: rotate(3deg);}
+    66% {transform: rotate(-3deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.image{
+    position: absolute;
+    background-image: url(/static/images/landing/rock1.png);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    animation: float 8s infinite;
+}
+
+.landing-page-content{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+}
+
+.general-block{
+    margin-bottom: 120px;
+}
+
+
+.general-heading{
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    /* text-shadow: 0 0 15px whitesmoke, 0 0 20px whitesmoke,
+    0 0 40px rgb(47, 0, 255), 0 0 80px rgb(47, 0, 255), 0 0 90px rgb(47, 0, 255),
+    0 0 100px rgb(47, 0, 255), 0 0 150px rgb(47, 0, 255) */
+    
+    /* text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px rgb(15, 255, 255),
+    0 0 50px rgb(15, 255, 255),
+    0 0 60px rgb(15, 255, 255),
+    0 0 750px rgb(15, 255, 255) */
+}
+
+.first-heading{
+    font-size: 3.9rem;
+}
+.general-content{
+    color: white;
+    font-size: 1.3rem;
+    /* text-indent: 70px; */
+    text-align: justify;
+    /* text-align: center; */
+}
+
+@keyframes float {
+    0%{
+
+    }
+    50%{
+        transform: translateY(20px)
+    }
+    100%{
+        transform: translate(0px,0px)
+    }
+}
+
+.registration-button{
+    position: absolute;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    padding-top: 13px;
+    font-weight: 800;
+    font-size: 20px;
+    /* background-color: #f1f4f0; */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    /* color: #4a8dba; */
+    color: #f1f4f0;
+    /*color: #173f5f;*/
+    z-index: 10;
+    right: 11%;
+    bottom: 42%;
+    /* right: 18.5%;
+    bottom: 33%; */
+    cursor: pointer;
+    user-select: none;
+
+    /* box-shadow: 0 0 5px #f1f4f0, 0 0 10px #f1f4f0, 0 0 15px #fff, 0 0 20px #f1f4f0,
+    0 0 25px #f1f4f0, 0 0 30px #f1f4f0, 0 0 35px #f1f4f0, 0 0 40px #f1f4f0; */
+    box-shadow: 0 0 5px #4a8dba, 0 0 10px #4a8dba, 0 0 15px #fff, 0 0 20px #4a8dba,
+    0 0 25px #4a8dba, 0 0 30px #4a8dba, 0 0 40px #4a8dba, 0 0 45px #4a8dba;
+    /* box-shadow: 0 0 5px #4a8dba, 0 0 10px #4a8dba, 0 0 15px #fff, 0 0 20px #4a8dba,
+    0 0 25px #4a8dba; */
+
+    text-shadow: 0 0 5px #f1f4f0, 0 0 10px #f1f4f0, 0 0 20px #fff, 0 0 40px #f1f4f0,
+    0 0 80px #f1f4f0, 0 0 90px #f1f4f0, 0 0 100px #f1f4f0, 0 0 150px #f1f4f0;
+    /* text-shadow: 0 0 5px #4a8dba, 0 0 10px #4a8dba, 0 0 20px #fff, 0 0 40px #4a8dba,
+    0 0 80px #4a8dba, 0 0 90px #4a8dba, 0 0 100px #4a8dba, 0 0 150px #4a8dba; */
+}
+
+.registration-button:hover{
+    /* border: 2px solid #f1f4f0;  */
+ box-shadow: 0 0 5px #f1f4f0, 0 0 10px #f1f4f0, 0 0 15px #fff, 0 0 20px #f1f4f0,
+    0 0 25px #f1f4f0, 0 0 30px #f1f4f0, 0 0 35px #f1f4f0, 0 0 40px #f1f4f0;
+}
+
+
+/* ****************************************************************************************************************** */
+/* Mobile devices */
+/* ****************************************************************************************************************** */
+
+.mobile-screen{
+    position: relative;
+    background-image: url('/static/images/landing/spaceship_vert.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mobile-logo img{
+    background-size: cover;
+    margin-top: 5%;
+    width: 90vw;
+    height: auto;
+    z-index: 11;
+}
+
+@media screen and (max-device-width: 380px){
+    .general-heading{
+        font-size: 2rem;
+    }
+    .general-content{
+        font-size: 0.9rem;
+    }
+    .general-block{
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-device-width: 1360px){
+    .registration-button{
+        bottom: 55%;
+        /* background-color: rgba(0, 0, 0, 0.4); */
+    }
+}
+
+@media screen and (max-device-width: 1250px){
+    .registration-button{
+        /* bottom: 55%; */
+        right: 10%;
+        /* background-color: rgba(0, 0, 0, 0.4); */
+    }
+}
+
+@media screen and (min-device-width: 560px){
+    .mobile-logo img{
+        width: 75vw;
+        margin-top: 2.5%;
+    }
+}
+
+@media screen and (min-device-width: 380px) and (max-device-width: 510px){
+    .general-heading{
+        font-size: 1.5rem;
+    }
+    .general-content{
+        font-size: 1rem;
+    }
+    .general-block{
+        margin-bottom: 45px;
+    }
+}
+
+@media screen and (min-device-width: 510px) and (max-device-width: 746px){
+    .general-heading{
+        font-size: 2rem;
+    }
+    .general-content{
+        font-size: 1.2rem;
+    }
+
+    .general-block{
+        margin-bottom: 70px;
+    }
+}
+
+@media screen and (max-device-width: 860px){
+    .logo{
+        right: 27%;
+        height: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .registration-button{
+        right: 30%;
+    }
+}
+
+@media screen and (min-device-width: 746px) and (max-device-width: 960px){
+   .general-heading{
+       font-size: 2.8rem;
+   }
+   .general-content{
+       font-size: 1.5rem;
+   }
+   .general-block{
+    margin-bottom: 110px;
+}
+}
+
+@media screen and (max-device-width: 1020px){
+    .image{
+        display: none;
+    }
+    .logo{
+        width: 45%;
+    }
+}
+
+@media screen and (max-device-width: 1060px){
+    .remove-this-rock{
+        display: none;
+    }
+}
+
+@media screen and (max-device-width: 780px){
+    .registration-button{
+        bottom: 45%;
+        /* margin-left: auto; */
+    }
+}
+
+@media screen and (max-device-width: 630px){
+    .registration-button{
+        bottom: 50%;
+        right: 25%;
+    }
+}
+
+@media screen and (max-device-width: 520px){
+    .registration-button{
+        bottom: 50%;
+        right: 23%;
+        font-size: 15px;
+        width: 250px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-device-width: 420px){
+    .registration-button{
+        bottom: 65%;
+        right: 15%;
+    }
+}
+
+@media screen and (max-device-width: 340px){
+    .registration-button{
+        bottom: 65%;
+        font-size: 10px;
+        width: 150px;
+        height: 40px;
+        right: 25%;
+    }
+}
+
+
+

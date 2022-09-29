@@ -1,0 +1,215 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signup22.css' %}">
+
+<body>
+    <div class="signup">
+        <div class="main-container">
+            <div class="box">
+                <span class="span1"></span>
+                <span class="span2"></span>
+                <div class="content">
+                    <h1 style="font-weight: 700;">Sign Up</h1>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h6 id="message">{{ message }}</h6>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="subcontent-container">
+                            <div class="subcontent subcontent-1" id="cont1">
+                                <p>
+                                    {{form.username.label}}
+                                    {{form.username}}
+                                </p>
+
+                                <p>
+                                    {{form.email.label}}*
+                                    {{form.email}}
+                                </p>
+
+                                <p>
+                                    {{form.first_name.label}}*
+                                    {{form.first_name}}
+                                </p>
+
+                                <p>
+                                    {{form.last_name.label}}
+                                    {{form.last_name}}
+                                </p>
+
+                                <p>
+                                    {{form.DOB.label}}
+                                    {{form.DOB}}
+                                </p>
+
+                                <p>
+                                    {{form.password1.label}}*
+                                    {{form.password1}}
+                                </p>
+
+                                <p>
+                                    {{form.password2.label}}*
+                                    {{form.password2}}
+                                </p>
+
+                                <!-- <p>
+                                    <button type="next-btn" class="goNext" id="goNext">
+                                        Next
+                                    </button>
+                                </p> -->
+                            </div>
+
+
+                            <div class="subcontent subcontent-2" id="cont3">
+                                <p>
+                                    {{form.university.label}}*
+                                    {{form.university}}
+                                </p>
+
+                                <p>
+                                    {{form.contact_number.label}}*
+                                    {{form.contact_number}}
+                                </p>
+
+                                <p>
+                                    {{form.ieee_id.label}}
+                                    {{form.ieee_id}}
+                                </p>
+
+                                <p>
+                                    {{form.referral_code.label}}
+                                    {{form.referral_code}}
+                                </p>
+
+                            </div>
+
+                            <div class="subcontent subcontent-3" id="cont3">
+                                
+                                <p>
+                                    <div class="fee-structure">
+                                        <div>IEEE members: Rs. 50</div>
+                                        <div>Non-IEEE members: Rs. 100</div>
+                                    </div>
+                                </p>
+
+                                <div class="btn_container">
+                                    <!--<button class="back-btn" id="goBack" type="button">Back</button>-->
+                                    <!-- <button class="register-btn" id="reg-btn">Register</button> -->
+                                    <button type="button" class="register-btn" id="reg-btn">Register</button>    
+                                </div>
+                                <br>
+                                <div class="login-cont">Already have an account? <a href="{% url 'login_page' %}">Log in</a></div>
+                                <br>
+                                <div class="note">
+                                    <p>*Compulsory Fields</p>
+                                    <p>^On entering an invalid IEEE ID your registration will stand
+                                    <br>
+                                    cancelled, and no refunds will be provided.</p>
+                                    <p>Note: If you can't re-register using you email id, try logging in. </p>
+                                        <p>If you still can't log in, try registering again.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="staff-auth" class="overlay">
+                            <div class="popup">
+                                <div class="popup-header">
+                                    <h3>Staff Authentication</h3>
+                                    <a class="close-popup" id="close-popup" href="#"><h3>&times;</h3></a>
+                                </div>
+                                <div class="popup-content">
+                                    <div class="input-field">
+                                        <label for="staff_username">Staff Usernmae</label>
+                                        <input name="staff_username" id="staff_username" maxlength="50" required>
+                                    </div>
+                                    <div class="input-field">
+                                        <label for="staff_pass">Staff Password</label>
+                                        <input type="password" id="staff_pass" name="staff_pass" maxlength="50" required>
+                                    </div>
+                                    <button class="auth-btn" type="submit">Authenticate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--<h1 class="text-red blink-hard">Registration Closed!! </h1>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+    <script>
+        document.getElementById('reg-btn').addEventListener('click', () => {
+            document.getElementById('staff-auth').style.visibility = 'visible';
+            document.getElementById('staff-auth').style.opacity = '1';
+        });
+        document.getElementById('close-popup').addEventListener('click', () => {
+            document.getElementById('staff-auth').style.visibility = 'hidden';
+            document.getElementById('staff-auth').style.opacity = '0';
+        })
+        document.getElementById('goNext').addEventListener('click', () => {
+            document.getElementById('cont1').style.display = 'none';
+            document.getElementById('cont2').style.display = 'block';
+        });
+        document.getElementById('goBack').addEventListener('click', () => {
+            document.getElementById('cont2').style.display = 'none';
+            document.getElementById('cont1').style.display = 'block';
+        });
+        
+    </script>
+
+<!-- Razorpay's Javascript code. -->
+<!--<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+
+      // Enter the Key ID generated from the Dashboard
+      key: "{{ razorpay_merchant_key }}",
+
+      // Amount is in currency subunits.
+      // Default currency is INR. Hence,
+      // 50000 refers to 50000 paise
+      amount: "{{ razorpay_amount }}",
+      currency: "{{ currency }}",
+
+      // Your/store name.
+      name: "Dj Razorpay",
+
+      // Pass the `id` obtained in the response of Step 1
+      order_id: "{{ razorpay_order_id }}",
+      callback_url: "{{ callback_url }}",
+    };
+
+    // initialise razorpay with the options.
+    var rzp1 = new Razorpay(options);
+
+    // add event listener to the payment button.
+    document.getElementById("pay-btn").onclick = function (e) {
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>-->
+
+
+{% endblock %}

@@ -1,0 +1,282 @@
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,900,700italic,700,600italic,600,400italic);
+
+.timer-class{
+  font-family: 'Titillium Web', cursive;
+  width: fit-content;
+  height: 30vh;
+  margin: 0 auto;
+  bottom: 5%;
+  right: 5%;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  position: absolute;
+  display:flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 25px;
+}
+.mobile-timer-class{
+  font-family: 'Titillium Web', cursive;
+  height: 50vh;
+  color: white;
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 15px;
+  position: relative;
+  left: 52.5px;
+  margin-top: 180px;
+  
+}
+
+#days{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  margin: 8px;
+  border: 2px solid #f1f4f0;
+  border-radius: 15%;
+  font-size: 3em;
+  font-weight: 500;
+  color: #f1f4f0;
+}
+#mobile-days{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  margin: 8px;
+  border: 2px solid #f1f4f0;
+  border-radius: 15%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #f1f4f0;
+  position: relative;
+  top: 0%;
+}
+
+
+#hours{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  border: 2px solid #4a8dba;
+  margin: 8px;
+  border-radius: 15%;
+  font-size: 3em;
+  font-weight: 500;
+color: #4a8dba;
+}
+#mobile-hours{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  border: 2px solid #4a8dba;
+  margin: 8px;
+  border-radius: 15%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4a8dba;
+  position: relative;
+  top: 21%;
+  left: -35px;
+}
+#minutes{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  border: 2px solid #f1f4f0;
+  margin: 8px;
+  border-radius: 15%;
+  font-size: 3em;
+  font-weight: 500;
+  color: #f1f4f0;
+}
+#mobile-minutes{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  border: 2px solid #f1f4f0;
+  margin: 8px;
+  border-radius: 15%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #f1f4f0;
+  position: relative;
+  top: 42%;
+  left: -70px;
+}
+#seconds{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  margin: 8px;
+  border: 2px solid #4a8dba;
+  border-radius: 15%;
+  font-size: 3em;
+  font-weight: 500;
+color: #4a8dba;
+}
+#mobile-seconds{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  margin: 8px;
+  border: 2px solid #4a8dba;
+  border-radius: 15%;
+  font-size: 20px;
+  font-weight: 500;
+color: #4a8dba;
+position: relative;
+top: 64%;
+left: -105px;
+}
+
+
+.timer-text1{
+  font-size: 25px;
+}
+.timer-text2{
+  font-size: 25px;
+}
+.timer-text3{
+  font-size: 25px;
+}
+.timer-text4{
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 310px) {  
+  #mobile-days{
+    font-size: 12px;
+  }
+  #mobile-hours{
+    font-size: 12px;
+  }
+  #mobile-minutes{
+    font-size: 12px;
+  }
+  #mobile-seconds{
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (min-device-width: 310px) and (max-device-width: 390px) {
+  #mobile-days{
+    font-size: 14px;
+    top: 12%;
+  }
+  #mobile-hours{
+    font-size: 14px;
+    top: 24%;
+  }
+  #mobile-minutes{
+    font-size: 14px;
+    top: 36%;
+  }
+  #mobile-seconds{
+    font-size: 14px;
+    top: 48%;
+  }
+}
+@media screen and (min-device-width: 390px) and (max-device-width: 460px) {
+  #mobile-days{
+    top: 12%;
+  }
+  #mobile-hours{
+    top: 24%;
+  }
+  #mobile-minutes{
+    top: 36%;
+  }
+  #mobile-seconds{
+    top: 48%;
+  }
+  .mobile-timer-class{
+    left: 37.5px;
+    margin-top: 125px;
+  }
+}
+@media screen and (min-device-width: 460px) and (max-device-width: 560px) {
+  #mobile-days{
+    font-size: 20px;
+    left: 0px;
+    top: 8%;
+  }
+  #mobile-hours{
+    font-size: 20px;
+    left: -25px;
+    top: 16%;
+  }
+  #mobile-minutes{
+    font-size: 20px;
+    left: -50px;
+    top: 24%;
+  }
+  #mobile-seconds{
+    font-size: 20px;
+    left: -75px;
+    top: 32%;
+  }
+  .mobile-timer-class{
+    left: 37.5px;
+    margin-top: 135px;
+  }
+}
+
+@media screen and (min-device-width: 780px) and (max-device-width: 860px) {
+  .timer-class{
+    right: 15%;
+  }
+}
+
+@media screen and (min-device-width: 560px) and (max-device-width: 1000px) {
+  #mobile-days{
+    font-size: 27px;
+    left: 0px;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #mobile-hours{
+    font-size: 27px;
+    left: -10px;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #mobile-minutes{
+    font-size: 27px;
+    left: -20px;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #mobile-seconds{
+    font-size: 27px;
+    left: -30px;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .mobile-timer-class{
+    left: 15px;
+    margin-top: 210px;
+  }
+}
+
+@media screen and (min-device-width: 680px) and (max-device-width: 780px) {
+  .mobile-timer-class{
+    margin-top: 150px;
+  }
+}

@@ -1,0 +1,75 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+
+<!--<div class="profile-card">
+            <header>
+                <img src="/static/images/profile.png">
+
+                <h1>{{request.user.first_name}} {{request.user.last_name}}</h1>
+
+            </header>
+
+
+            <div class="profile-bio">
+
+
+                <p>
+                    Username: {{ request.user.username }}
+                    <br>
+                    Email: {{request.user.email}}
+                    <br>
+                    Date of Birth: {{request.user.profile.DOB}}
+                    <br>
+                    University: {{request.user.profile.University}}
+                    <br>
+                    Contact Number: {{request.user.profile.contactNumber}}
+                </p>
+
+                <button class="login-btn">
+                    <a href="editProfile">Edit</a>
+                </button>
+            </div>
+        </div>-->
+
+
+<div class="OuterDiv">
+<div class="box">
+    <div id="overlay">
+      <div class="image">
+        <img id="profileImage" src="/static/images/profile.png">
+      </div>
+      <ul class="profile-text">{{request.user.first_name}}</ul>
+    </div>
+</div>
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+    </div>
+    <div class="panel">
+      <div class="panel-body">
+        <!--Username: {{ request.user.username }}
+        <br>-->
+        Email: {{request.user.email}} 
+        <br>
+        <!--Date of Birth: {{request.user.profile.DOB}}
+        <br>-->
+        University: {{request.user.profile.University}}
+        <br>
+        Contact Number: {{request.user.profile.contactNumber}}
+      </div>
+    </div>
+  </div>
+  <br>
+  <div  id="editprofile">
+  <button><a href="editProfile">Edit</a></button>
+  </div>
+</div>
+</div>
+
+{% endblock %}

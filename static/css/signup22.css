@@ -1,0 +1,124 @@
+body {
+  background-color: #000;
+  color: aliceblue;
+}
+
+.main_container {
+  background-color: #1d1f21;
+  width: 90%;
+  margin: 5vh auto;
+  border-radius: 40px;
+}
+h1,
+h3 {
+  color: #f6a899;
+}
+
+h3 {
+  margin-left: 2.5%;
+}
+.heading {
+  text-align: center;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 70%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+label {
+  color: #b2c8df;
+}
+.form-container1 {
+  margin: auto;
+}
+
+.form-container2 {
+  margin-left: 2.5%;
+  margin-right: 2%;
+}
+
+.custom_row {
+  margin: 4 0px auto;
+}
+
+.cointainer1, .cointainer2, .cointainer3 {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+
+
+.sub-container1 {
+  text-align: center;
+}
+
+.sub-container2 {
+  font-size: small;
+  line-height: 1.7;
+}
+.reg {
+  margin: 10px auto;
+}
+
+/* MODEL CSS */
+.modal-content {
+  background-color: #1d1f21;
+  color: #f5b965;
+}
+
+#main-heading {
+  color: #f5b965;
+}
+
+#myBtn {
+  outline: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 200px;
+  border: 2px solid #f5b965;
+  color: black;
+  background-color: #f5b965;
+  padding: auto;
+  box-shadow: rgb(0 0 0 / 7%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 1.5px 0px;
+  /* font-weight: 800; */
+  font-size: 16px;
+  height: 36px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#submit-me{
+  cursor: pointer;
+  border-radius: 6px;
+  width: 150px;
+  border: 2px solid #f5b965;
+  color: black;
+  background-color: #f5b965;
+  padding: auto;
+  box-shadow: rgb(0 0 0 / 7%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 1.5px 0px;
+  /* font-weight: 800; */
+}
+
+/* @media (max-width: 820px) {
+  .sub-container1 {
+    text-align: left;
+    margin-left: 12%;
+  }
+  .sub-container2 {
+    text-align: left;
+    margin-left: 12%;
+  }
+} */
+
+
+.custom_row p input{
+  width: 100%;
+}

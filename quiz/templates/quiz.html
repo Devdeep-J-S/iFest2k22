@@ -1,0 +1,33 @@
+{% load static %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {% for qid, data in quiz.mcq.items %}
+        <p>
+            {{ data.question }}
+        </p>
+        <p>Score: {{ data.score }}</p>
+        <input type='radio' name="{{ qid }}" value="{{ data.option1 }}"/>{{ data.option1 }}<br>
+        <input type='radio' name="{{ qid }}" value="{{ data.option2 }}"/>{{ data.option2 }}<br>
+        <input type='radio' name="{{ qid }}" value="{{ data.option3 }}"/>{{ data.option3 }}<br>
+        <input type='radio' name="{{ qid }}" value="{{ data.option4 }}"/>{{ data.option4 }}<br>
+        <br><br>
+    {% endfor %}
+    {% for qid, data in quiz.saq.items %}
+        <p>
+            {{ data.question }}
+        </p>
+        <p>Score: {{ data.score }}</p>
+        <label>Your Answer: </label>
+        <input type="text" id="{{ qid }}"/><br> 
+        <br><br>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
+
+
+{% for country_key, country_value in data.items %}
+  {{ country_value.eng.name }}<br />
+{% endfor %}

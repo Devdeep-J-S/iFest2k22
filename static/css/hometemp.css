@@ -1,0 +1,170 @@
+*{
+    font-family: Helvetica,Arial,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";;
+}
+
+
+body {
+    background-image: url(../images/homepage_images/fin_curtains.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    }
+
+.main{
+    height: 25vh;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 27vh;
+    margin-bottom: 10vh;
+}
+
+.main-text{
+    color: aliceblue;
+    font-weight: 900;
+    font-size: 48px;
+}
+
+.media{
+    /* position: fixed; */
+    margin-top: 10%;
+    /* margin-left: 41vw; */
+
+}
+
+
+button{
+    /* display: inline-block; */
+    outline: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 200px;
+    border: 2px solid #f5b965;
+    color: black;
+    background-color: #f5b965;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+    font-weight: 800;
+    font-size: 16px;
+    height: 42px;
+    font-size: 20px;
+    /* margin-bottom:10px; */
+    /* margin-top: 10px; */
+}
+
+#registerbtn a{
+    text-decoration: none;
+    color: black;
+}
+
+.or{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+button:hover{
+    background: 0 0;
+    color: #f5b965;
+}
+
+
+
+textarea {
+    resize: none;
+}
+
+
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.svg-inline--fa {
+  vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+  margin: auto;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
+
+.rounded-social-buttons .social-button.at {
+  background: #8843aa;
+}
+
+.rounded-social-buttons .social-button.at:hover, .rounded-social-buttons .social-button.at:focus {
+  color: #8843aa;
+  background: #fefefe;
+  border-color: #8843aa;
+}
