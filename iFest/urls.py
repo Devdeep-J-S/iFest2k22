@@ -43,13 +43,6 @@ urlpatterns = [
     # path('moreInfo/', views.moreInfo, name='moreInfo'),
     # path('team/', views.ifestTeam, name='ifestTeam'),
     # path('sponsors/', views.sponsors, name='sponsors'),
-    path('events/', views.home, name='events'),
-    path('pronites/', views.home, name='pronites'),
-    path('speakers/', views.home, name='speakers'),
-    path('dashboard/',views.home, name='dashboard'),
-    path('moreInfo/', views.home, name='moreInfo'),
-    path('team/', views.home, name='ifestTeam'),
-    path('sponsors/', views.home, name='sponsors'),
     
     # path('reset_password/',
     #      auth_views.PasswordResetView.as_view(template_name="password_reset.html"),
@@ -69,24 +62,7 @@ urlpatterns = [
 
     # path('iohunt/', include('iohunt.urls')),
     # path('quiz/', include('quiz.urls'))
-    path('reset_password/',
-         auth_views.PasswordResetView.as_view(template_name="home.html"),
-         name="reset_password"),
 
-    path('reset_password_sent/',
-         auth_views.PasswordResetDoneView.as_view(template_name="home.html"),
-         name="password_reset_done"),
-
-    path('reset/<uidb64>/<token>/',
-         auth_views.PasswordResetConfirmView.as_view(template_name="home.html"),
-         name="password_reset_confirm"),
-
-    path('reset_password_complete/',
-         auth_views.PasswordResetCompleteView.as_view(template_name="home.html"),
-         name="password_reset_complete"),
-
-    # path('iohunt/', include('iohunt.urls')),
-    # path('quiz/', include('quiz.urls'))
 ]
 
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

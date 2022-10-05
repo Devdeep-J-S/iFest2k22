@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+}
+
 body {
   background-color: #000;
   color: aliceblue;
@@ -11,14 +17,16 @@ body {
 }
 h1,
 h3 {
-  color: #f6a899;
+  color: rgb(0, 217, 255);
 }
 
 h3 {
   margin-left: 2.5%;
+  
 }
 .heading {
   text-align: center;
+  letter-spacing: 2px;
 }
 
 input {
@@ -71,11 +79,11 @@ label {
 /* MODEL CSS */
 .modal-content {
   background-color: #1d1f21;
-  color: #f5b965;
+  color: #6098FF;
 }
 
 #main-heading {
-  color: #f5b965;
+  color: #6098FF;
 }
 
 #myBtn {
@@ -83,25 +91,24 @@ label {
   cursor: pointer;
   border-radius: 6px;
   width: 200px;
-  border: 2px solid #f5b965;
+  border: 2px solid #6098FF;
   color: black;
-  background-color: #f5b965;
+  background-color: #6098FF;
   padding: auto;
   box-shadow: rgb(0 0 0 / 7%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 1.5px 0px;
   /* font-weight: 800; */
   font-size: 16px;
-  height: 36px;
-  font-size: 20px;
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #submit-me{
   cursor: pointer;
   border-radius: 6px;
-  width: 150px;
-  border: 2px solid #f5b965;
+  
+  border: 2px solid #6098FF;
   color: black;
-  background-color: #f5b965;
+  background-color: #6098FF;
   padding: auto;
   box-shadow: rgb(0 0 0 / 7%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 1.5px 0px;
   /* font-weight: 800; */

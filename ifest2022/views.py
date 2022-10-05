@@ -233,6 +233,7 @@ def signup(request):
             user.profile.ieee_id = form.cleaned_data.get('ieee_id')
             user.profile.referral_code = form.cleaned_data.get('referral_code')
             user.profile.payment = True     # Is payment done ?
+            user.profile.staffAuth = staffUser.get_full_name()
             user.save()
             return redirect('home')
 
