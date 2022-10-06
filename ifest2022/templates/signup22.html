@@ -16,10 +16,10 @@
       </div>
 
       <div class="row">
-        <div class="text-center">
+        <div class="text-center text-danger">
           {% if messages %}
             {% for message in messages %}
-                <h6 id="message">{{ message }}</h6>
+                <h6 id="message text-danger">{{ message }}</h6>
             {% endfor %}
           {% endif %}
   
@@ -81,7 +81,7 @@
               {{form.contact_number}}
             </p>
             <p>
-              {{form.ieee_id.label}}** <br/>
+              {{form.ieee_id.label}} <br/>
               {{form.ieee_id}}
             </p>
             <p>
@@ -115,9 +115,11 @@
             <div class="sub-container2">
               <p>
                 *Complusory Fields
-                <br /><br/>
-                **On entering an invalid IEEE ID your registration will stand
+                <br />
+                On entering an invalid IEEE ID your registration will stand
                 cancelled and no refund will be provided.
+                <br />
+                Password must be of atleast 8 characters.
                 <!-- <br /><br/>
                 Note: If you can't register using your email id, try
                 logging in. 
@@ -142,11 +144,11 @@
                 <!-- <h3>Staff Authentication</h3> -->
                 <div class="input-field my-2 mx-4">
                   <label for="staff_pass">Staff Username</label><br />
-                  <input class="w-100" name="staff_username" id="staff_username" required>
+                  <input class="w-100" name="staff_username" id="staff_username" required autocomplete="off">
                 </div>
                 <div class="input-field my-2 mx-4">
                     <label for="staff_pass">Staff Password</label><br />
-                    <input class="w-100" type="password" id="staff_pass" name="staff_pass" required>
+                    <input class="w-100" type="password" id="staff_pass" name="staff_pass" required autocomplete="off">
                 </div>
               </div>
               <div class="modal-footer">

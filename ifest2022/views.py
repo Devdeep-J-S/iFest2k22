@@ -15,6 +15,9 @@ import razorpay
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseBadRequest
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 from .models import *
 from .forms import *
@@ -191,12 +194,17 @@ def signup(request):
         email = request.POST['email']
         ieee_id = request.POST['ieee_id']
         currency = 'INR'
+
         if User.objects.filter(email=request.POST['email']).exists():
             messages.error(request, "The email you entered is already registered.")
             return redirect('signup')
         
         if request.POST['password1'] != request.POST['password2']:
             messages.error(request, "The passwords entered do not match.")
+            return redirect('signup')
+
+        if len(request.POST['password1']) < 8:
+            messages.error(request, "Password must be of atleast 8 characters.")
             return redirect('signup')
 
         if request.POST['ieee_id']:
@@ -207,6 +215,7 @@ def signup(request):
             if not campusAmbassador.objects.filter(referral_code=request.POST['referral_code']).exists():
                 messages.error(request, "The referral code you entered is incorrect")
                 return redirect('signup')
+        
         CA = campusAmbassador.objects.filter(referral_code=request.POST['referral_code'])
         
         # Staff Authentication for Cash Payment
@@ -235,6 +244,17 @@ def signup(request):
             user.profile.payment = True     # Is payment done ?
             user.profile.staffAuth = staffUser.get_full_name()
             user.save()
+
+            html_text = render_to_string('registrationEmail.html')
+            plain_text = strip_tags(html_text) 
+            send_mail(
+                subject="i.Fest '22 : Registeration Successful",
+                from_email='ieee_noreply@daiict.ac.in',
+                recipient_list=[user.email],
+                message=plain_text,
+                html_message=html_text,
+            )
+
             return redirect('home')
 
     form = CreateUserForm()
