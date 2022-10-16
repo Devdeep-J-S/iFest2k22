@@ -5,69 +5,45 @@
 
 <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}"/>
 
-<body class="text-center">
-        <div class="login-container">
-            <div class="main-container">
-                <div class="box">
-                    <span class="span1"></span>
-                    <span class="span2"></span>
-                    <div class="content">
+<body>
+  <div class="shape shape-t"></div>
+  <div class="shape shape-b"></div>
+    <div class="container h-100">
+      <div class="row h-100 m-auto form-cont">
+          <form class="forms p-5 m-auto" method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+              <h3 class="form-heading">Edit Profile</h3>
+              <div class="text-danger">
+                {% if messages %}
+                  {% for message in messages %}
+                    <h6>{{ message }}</h6>
+                  {% endfor %}
+              {% endif %}
+              </div>
 
-<br>
-                        <h1> Edit Profile </h1>
-
-                        <br>
-
-
-{% if messages %}
-    {% for message in messages %}
-        <h6 id="message">{{ message }}</h6>
-    {% endfor %}
-{% endif %}
-
-<form method="POST">
-        {% csrf_token %}
-        <p>
-            <label>Name</label>
-        <!--{{form.first_name.label}}-->
-        {{form.first_name}}
-        </p>
-
-        <!--<p>
-        {{form.last_name.label}}
-        {{form.last_name}}
-        </p>-->
-
-        <!--<p>
-            <label>Date of Birth</label>
-        {{form.DOB}}
-        </p>-->
-
-        <p>
-        {{form.University.label}}
-        {{form.University}}
-        </p>
-
-        <p>
-            <label>Contact Number</label>
-        {{form.contactNumber}}
-        </p>
-
-        <div class="btn_container">
-            <button class="back-btn"><a href="{% url 'profile' %}"> Back </a></button>
-        <button class="submit-btn" type="submit">Submit</button>
-        </div>
-
-</form>
-
-    <p class="formerrors">
-    {{form.errors}}
-    </p>
-
-                        </div>
-                </div>
             </div>
-        </div>
-    </body>
+    
+            <div class="mb-3 d-flex">
+              <input type="text" class="form-control me-2" placeholder="First Name" id="email" name="first_name">
+              <input type="text" class="form-control ms-2" placeholder="Last Name" id="email" name="last_name">
+            </div>
+    
+            <div class="section space mb-3">
+                <input type="password"  class="form-control pass" name="university" required placeholder="University">
+            </div>
+            <div class="section space mb-5">
+                <input type="password"  class="form-control pass" name="contact_number" required placeholder="Contact Number">
+            </div>
+            
+            <div class="w-100 d-flex">
+                <a class="btn btn-dark ms-auto" href="{% url 'profile' %}"><b>Back</b></a>
+                <button class="btn btn-primary ms-2"><b>Confirm</b></button>
+            </div>
+           
+          </form>
+      </div>
+    </div>
+</body>
 
 {% endblock %}

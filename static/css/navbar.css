@@ -1,0 +1,72 @@
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+  
+
+*{
+    font-family: 'Saira', sans-serif;
+    color: #ffffff;
+}
+
+.sidebar{
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+ul{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-link:hover{
+    color: #0F5CCC !important;
+}
+
+
+.navbar{
+    position: fixed !important;
+    top: 0;
+    z-index: 5 !important;
+}
+
+
+.toggle-sidebar{    
+    width: 60px;
+    border-radius: 20px !important;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+         
+.btn-grad {
+    background-image: linear-gradient(to left, #48B1CB, #0F5CCC,  #AC48A9 );
+    text-decoration: none;
+    height: 45px;
+    border-radius: 20px !important;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white !important;            
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+    font-weight: bold;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+
+
+@media only screen and (max-width: 575.98px) {
+    .offcanvas-start{
+        width: 100% !important;
+    }
+    .txt{
+        text-align: center;
+    }
+  }
+

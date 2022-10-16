@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i.Fest '22</title>
+    <link rel="stylesheet" href="{% static 'css/vr.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <div class="row overlay-cont p-0 m-auto">
+            <img id="VR-BG" src="{% static 'images/vr/vr-bg.png' %}"> 
+            <img id="VR" src="{% static 'images/vr/vrg.svg' %}" alt="">
+            <a class="btn6" href="{% url 'signup' %}">Register Now</a>
+            <div class="info mt-3 text-center">
+                Prepare to have a splendid Techno-Carnival this November!
+                <div class="typewriter m-auto mt-2">
+                    <h1>COMING SOON</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

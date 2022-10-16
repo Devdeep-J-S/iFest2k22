@@ -1,4 +1,5 @@
 from locale import currency
+import re
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 import datetime
@@ -25,8 +26,7 @@ from .forms import *
 # Create your views here.
 
 # authorize razorpay client with API Keys.
-razorpay_client = razorpay.Client(
-    auth=(settings.RAZOR_KEY_ID, settings.RAZOR_KEY_SECRET))
+razorpay_client = razorpay.Client(auth=(settings.RAZOR_KEY_ID, settings.RAZOR_KEY_SECRET))
 
 def welcome(request):
     return redirect('home')
@@ -47,29 +47,28 @@ def sponsors(request):
     return render(request,'sponsors.html')
 
 def login_func(request):
-    if request.user.is_anonymous==False:
+    if request.user.is_anonymous == False:
         return redirect('profile')
     if request.method == 'POST':
-        #username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(request, username=email, password=password)
         if user is not None:
-            if user.profile.payment == 0:
-                if user.profile.referral_code:
-                    CA = campusAmbassador.objects.filter(referralCode=user.profile.referral_code)
-                    newCount = CA[0].count - 1
-                    CA.update(
-                        count=newCount,
-                    )
+            if user.is_staff == False and user.profile.payment == False:
+                # if user.profile.referral_code:
+                #     CA = campusAmbassador.objects.filter(referralCode=user.profile.referral_code)
+                #     newCount = CA[0].count - 1
+                #     CA.update(
+                #         count=newCount,
+                #     )
                 user.delete()
-                messages.info(request,'Re-register and pay to login.')
+                messages.error(request,'Account does not exist.')
                 return redirect("login_page")
             else:
                 login(request, user)
                 return redirect('profile')
         else:
-            messages.error(request, 'Username or password is incorrect.')
+            messages.error(request, 'Incorrect username or password.')
             return redirect('login_page')
     else :
         return render(request, 'registration/login.html')
@@ -79,33 +78,6 @@ def logout_func(request):
     return redirect('home')
 
 
-#def register(request):
-#    currency = 'INR'
-#    amount = 20000  # Rs. 200
-
-    # Create a Razorpay Order
-#    razorpay_order = razorpay_client.order.create(dict(amount=amount,
-#                                                       currency=currency,
-#                                                       payment_capture='0'))
-
-    # order id of newly created order.
-#    razorpay_order_id = razorpay_order['id']
-#    callback_url = 'paymenthandler/'
-
-    # we need to pass these details to frontend.
-#    context = {}
-#    context['razorpay_order_id'] = razorpay_order_id
-#    context['razorpay_merchant_key'] = settings.RAZOR_KEY_ID
-#    context['razorpay_amount'] = amount
-#    context['currency'] = currency
-#    context['callback_url'] = callback_url
-
-#    return render(request, 'register.html', context=context)
-
-
-# we need to csrf_exempt this url as
-# POST request will be made by Razorpay
-# and it won't have the csrf token.
 @csrf_exempt
 def paymenthandler(request):
     # only accept POST request.
@@ -184,82 +156,6 @@ def paymenthandler(request):
     else:
         # if other than POST request is made.
         return HttpResponseBadRequest()
-
-
-def signup(request):
-    # if request.user.is_anonymous == False:
-    #     return redirect('profile')
-    if request.method == "POST":
-        form = CreateUserForm(request.POST or None)
-        email = request.POST['email']
-        ieee_id = request.POST['ieee_id']
-        currency = 'INR'
-
-        if User.objects.filter(email=request.POST['email']).exists():
-            messages.error(request, "The email you entered is already registered.")
-            return redirect('signup')
-        
-        if request.POST['password1'] != request.POST['password2']:
-            messages.error(request, "The passwords entered do not match.")
-            return redirect('signup')
-
-        if len(request.POST['password1']) < 8:
-            messages.error(request, "Password must be of atleast 8 characters.")
-            return redirect('signup')
-
-        if request.POST['ieee_id']:
-            if Profile.objects.filter(ieee_id=request.POST['ieee_id']).exists():
-                messages.error(request, "The IEEE ID you entered is already registered.")
-                return redirect('signup')
-        if request.POST['referral_code']:
-            if not campusAmbassador.objects.filter(referral_code=request.POST['referral_code']).exists():
-                messages.error(request, "The referral code you entered is incorrect")
-                return redirect('signup')
-        
-        CA = campusAmbassador.objects.filter(referral_code=request.POST['referral_code'])
-        
-        # Staff Authentication for Cash Payment
-        staffUsername = request.POST['staff_username']
-        staffPass = request.POST['staff_pass']
-
-        staffUser = authenticate(request, username=staffUsername, password=staffPass)
-
-        if staffUser is None or (not staffUser.is_staff):
-            messages.error(request, "Staff Authentication failed.")
-            return redirect('signup')
-
-        if form.is_valid():
-            if CA:
-                newCount = CA[0].count + 1
-                CA.update(
-                    count=newCount,
-                )
-            user = form.save()
-            user.refresh_from_db()
-            user.username = user.email
-            user.profile.university = form.cleaned_data.get('university')
-            user.profile.contact_number = form.cleaned_data.get('contact_number')
-            user.profile.ieee_id = form.cleaned_data.get('ieee_id')
-            user.profile.referral_code = form.cleaned_data.get('referral_code')
-            user.profile.payment = True     # Is payment done ?
-            user.profile.staffAuth = staffUser.get_full_name()
-            user.save()
-
-            html_text = render_to_string('registrationEmail.html')
-            plain_text = strip_tags(html_text) 
-            send_mail(
-                subject="i.Fest '22 : Registeration Successful",
-                from_email='ieee_noreply@daiict.ac.in',
-                recipient_list=[user.email],
-                message=plain_text,
-                html_message=html_text,
-            )
-
-            return redirect('home')
-
-    form = CreateUserForm()
-    return render(request, "signup22.html", {'form':form})
-
 
 # def signup(request):
 #     if request.user.is_anonymous==False:
@@ -349,6 +245,190 @@ def signup(request):
 #     else:
 #         return render(request, "registration/signup.html", {'form':form})
 
+def signup(request):
+    if request.user.is_anonymous == False:
+        return redirect('profile')
+    if request.method == "POST":
+        if User.objects.filter(email=request.POST['email']).exists():
+            u = User.objects.get(email=request.POST['email'])
+            if u.profile.payment == False:
+                u.delete()
+            else:
+                messages.error(request, "The email you entered is already registered.")
+                return redirect('signup')
+            
+        if request.POST['password1'] != request.POST['password2']:
+            messages.error(request, "The passwords entered do not match.")
+            return redirect('signup')
+
+        if len(request.POST['password1']) < 8:
+            messages.error(request, "Password must be of atleast 8 characters.")
+            return redirect('signup')
+
+        if request.POST['ieee_id']:
+            if Profile.objects.filter(ieee_id=request.POST['ieee_id']).exists():
+                messages.error(request, "The IEEE ID you entered is already registered.")
+                return redirect('signup')
+
+        form = CreateUserForm(request.POST or None)
+
+            # if request.POST['referral_code']:
+            #     if not campusAmbassador.objects.filter(referral_code=request.POST['referral_code']).exists():
+            #         messages.error(request, "The referral code you entered is incorrect")
+            #         return redirect('signup')
+            
+            #CA = campusAmbassador.objects.filter(referral_code=request.POST['referral_code'])
+
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            user.username = user.email
+            user.profile.university = form.cleaned_data.get('university')
+            user.profile.contact_number = form.cleaned_data.get('contact_number')
+            user.profile.ieee_id = form.cleaned_data.get('ieee_id')
+            user.profile.referral_code = form.cleaned_data.get('referral_code')
+            user.profile.payment = False     # Is payment done ?
+            if request.POST['passtype'] == "gold":
+                user.profile.gold = True
+            user.save()
+        else:
+            return redirect('signup')
+
+        if request.POST.get('payMethod') == "Online":
+            currency = 'INR'
+            email = request.POST.get('email')
+            ieee_id = request.POST.get('ieee_id')
+
+            if request.POST.get('passtype') == "gold":
+                amount = 600*100
+            else:
+                amount = 150*100
+
+            if email.find("@daiict.ac.in") != -1:
+                if ieee_id:
+                    amount = 50*100   # Rs. 50
+                else:
+                    amount = 100*100  # Rs. 100
+
+            razorpay_order = razorpay_client.order.create(dict(amount=amount, currency=currency, payment_capture='0'))
+            razorpay_order_id = razorpay_order['id']
+            user.profile.order_id = razorpay_order_id
+            user.save()
+
+            callback_url = 'paymenthandler/'
+
+            context = {}
+            context['razorpay_order_id'] = razorpay_order_id
+            context['razorpay_merchant_key'] = settings.RAZOR_KEY_ID
+            context['razorpay_amount'] = amount
+            context['currency'] = currency
+            context['callback_url'] = callback_url
+            context['form'] = form
+            context['razorpay'] = 1
+
+            return render(request, "signup22.html", context=context)
+
+        else:   # Offline Payment
+            return redirect('authenticate', username=user.username)
+
+                # html_text = render_to_string('registrationEmail.html', {'user':user})
+                # plain_text = strip_tags(html_text) 
+                # send_mail(
+                #     subject="i.Fest '22 : Registeration Successful",
+                #     from_email='ieee_noreply@daiict.ac.in',
+                #     recipient_list=[user.email],
+                #     message=plain_text,
+                #     html_message=html_text,
+                # )
+
+            messages.error(request, "Some error occured.")
+            return redirect('signup')
+
+    form = CreateUserForm()
+    return render(request, "signup22.html", {'form':form})
+
+
+@csrf_exempt
+def paymenthandler(request):
+    # only accept POST request.
+    if request.method == "POST":
+        try:
+            # get the required parameters from post request.
+            payment_id = request.POST.get('razorpay_payment_id', '')
+            razorpay_order_id = request.POST.get('razorpay_order_id', '')
+            signature = request.POST.get('razorpay_signature', '')
+            params_dict = {
+                'razorpay_order_id': razorpay_order_id,
+                'razorpay_payment_id': payment_id,
+                'razorpay_signature': signature
+            }
+            
+            user = User.object.get(order_id=razorpay_order_id)
+            print(user)
+
+            if user.profile.gold == True:
+                amount = 600*100
+            else:
+                amount = 150*100
+
+            if user.email.find("@daiict.ac.in") != -1:
+                if user.profile.ieee_id:
+                    amount = 50*100   # Rs. 50
+                else:
+                    amount = 100*100
+
+            # verify the payment signature.
+            result = razorpay_client.utility.verify_payment_signature(params_dict)
+            if result is not None: 
+                try:
+                    # capture the payemt
+                    razorpay_client.payment.capture(payment_id, amount)
+                    # render success page on successful caputre of payment
+                    user.profile.payment = True
+                    return render(request, 'success.html')
+                except:
+                    # if there is an error while capturing payment.
+                    return render(request, 'fail.html')
+            else:
+                # if signature verification fails.
+                return render(request, 'fail.html')
+        except:
+            # if we don't find the required parameters in POST data
+            return HttpResponseBadRequest()
+    else:
+       # if other than POST request is made.
+        return HttpResponseBadRequest()
+
+
+def staffAuth(request, username):
+    try:
+        user = User.objects.get(username=username)
+    except:
+        return redirect('signup')
+    
+    if user.profile.payment == True:
+        return redirect('login_page')
+
+    if request.method == 'POST':
+        staffUsername = request.POST['staff_username']
+        staffPass = request.POST['staff_pass']
+        staffUser = authenticate(request, username=staffUsername, password=staffPass)
+
+        if staffUser is None or (not staffUser.is_staff):
+            messages.error(request, "Staff Authentication Failed.")
+            return redirect('authenticate', username=username)
+        else:
+            user.profile.payment = True
+            user.profile.staffAuth = staffUser.get_full_name()
+            user.save()
+            return redirect('success')
+
+    return render(request, 'staffauth.html')
+
+
+def success(request):
+    return render(request, 'success.html')
+
 
 def events(request):
     events = Event.objects.all()
@@ -427,8 +507,7 @@ def editProfile(request):
     user = User.objects.filter(id=user_id)
     form = UpdateUserForm(initial={
         'first_name': user[0].first_name,
-        #'last_name': user[0].last_name,
-        #'DOB': user[0].profile.DOB,
+        'last_name': user[0].last_name,
         'university': user[0].profile.university,
         'contact_number': user[0].profile.contact_number,
     })
@@ -441,12 +520,12 @@ def editProfile(request):
         if form.is_valid():
             user = request.user
             first_name = form.cleaned_data.get('first_name')
-            #last_name = form.cleaned_data.get('last_name')
+            last_name = form.cleaned_data.get('last_name')
             #DOB = form.cleaned_data.get('DOB')
             university = form.cleaned_data.get('university')
             contact_number = form.cleaned_data.get('contact_number')
             user.first_name = first_name
-            #user.last_name = last_name
+            user.last_name = last_name
             #user.profile.DOB = DOB
             user.profile.university = university
             user.profile.contact_number = contact_number

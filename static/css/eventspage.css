@@ -1,13 +1,18 @@
-/* Heading */
-@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap'); 
-/* Text */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Geo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+  
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Saira', sans-serif;
+    color: #ffffff;
+}
+
+body{ 
+    background-image: url(../images/bg.svg);
+    color: rgb(255, 255, 255);
+    height: 100%;
 }
 
 :root{
@@ -17,18 +22,7 @@
 ::-webkit-scrollbar{
     display: none;
 }
-body{
-    min-height: 100vh;
-    background: var(--black);
-    color: var(--white);
-}
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
+
 
 .heading{
     position: relative;
@@ -37,12 +31,16 @@ body{
 }
 
 .heading h1{
-    color: white;
-    font-size: 5rem;
-    letter-spacing: 3px;
-    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    font-family: 'Saira', sans-serif;
+    font-weight: bold;
     text-align: center;
-    text-shadow: 4px 4px 4px rgb(1, 1, 151);
+    color: #030f33;
+    background: linear-gradient(#48B1CB 15%, #0F5CCC 55%,  #AC48A9 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
 }
 
 .container{
@@ -83,19 +81,16 @@ body{
     width:calc(100% - 90px);
     height: 100%;
     background:var(--white);
-    border-radius: 8px;
+    border-radius: 50px;
     transition: 0.5s;
     filter: blur(10px);
 }
 
 .box:nth-child(2n+1)::before, .box:nth-child(2n+1)::after{
-    background: linear-gradient(135deg,#52057B,#BC6FF1);
-    background: linear-gradient(135deg,#004D40,#BDBDBD);
-
+    background: linear-gradient(135deg,#0fcca3, #6644c2);
 }
 .box:nth-child(2n)::before, .box:nth-child(2n)::after{
-    background: linear-gradient(135deg,#293A80,#537EC5);
-    background: linear-gradient(135deg,#37474F,#80DEEA);
+    background: linear-gradient(135deg, #6644c2, #0fcca3);
 }
 
 .box span{
@@ -115,7 +110,7 @@ body{
     right:0;
     width:100%;
     height: 100%;
-    border-radius: 8px;
+    border-radius: 50px;
     background: rgba(255,255,255,0.2);
     backdrop-filter: blur(10px);
     opacity: 0;
@@ -138,7 +133,7 @@ body{
     left:0;
     width:100%;
     height: 100%;
-    border-radius: 8px;
+    border-radius: 50px;
     background: rgba(255,255,255,0.2);
     backdrop-filter: blur(10px);
     opacity: 0;
@@ -171,13 +166,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 5px 15px rgba(255,255,255,0.1);
     border-radius: 8px;
     z-index: 1;
     transition: 0.5s;
     color: var(--white);
-    
+    min-width: 280px;
 }
 
 .content img{
@@ -189,11 +184,9 @@ body{
 .content h2{
     font-size: 1.8rem;
     color: var(--white);
-    margin-bottom: 10px;
+    font-weight: bold;
 }
-.content h2 i{
-    margin-right: 10px;
-}
+
 .content p{
     font-size: 1.2rem;
     margin: 10px 0px;
@@ -201,27 +194,11 @@ body{
     font-weight: 500;
 }
 
-.btn{
-    width: 150px;
-    height: 40px;
-    font-size: 1.1rem;
-    /* letter-spacing: 1.5px; */
-    font-weight: bold;
-    margin:8px 0px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    color: white;
-    transition: all 0.5s ease-out;
-    background-color:#2075a0;
+.cbtn{
+    border-radius: 20px;
+    height: 45px;
 }
 
-.btn:hover{
-    box-shadow: inset 151px 0px 0px 0px #fff;
-    color: black;
-}
 
 @media screen and (max-width: 768px) {
     .heading h1{

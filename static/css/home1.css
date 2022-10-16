@@ -1,0 +1,83 @@
+body {
+    background-color: rgb(2, 10, 23);
+}
+
+.bottom-container {
+    margin: auto;
+    width: 95%;
+    background: -webkit-linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-media {
+    text-align: right;
+}
+
+.footer-contact-info {
+    width: 21%;
+    font-size: 1rem;
+
+}
+
+.flexbox {
+    display: flex;
+}
+
+.phono-logo {
+    margin-right: 8%;
+}
+
+.contact-info {
+    margin-left: 4%;
+}
+
+.details {
+    width: 75%;
+    margin: auto auto auto 0;
+}
+
+
+.footer-img {
+    margin: 0 0.6% 0 0;
+    width: 2.5%;
+}
+
+.footer-ref {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.footer-link {
+    margin-left: 12%;
+    font-weight: 600;
+    background: -webkit-linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-link:link {
+    text-decoration: none;
+}
+
+.footer-link:visited {
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline
+}
+
+.footer-link:active {
+    text-decoration: none;
+}
+
+hr{
+    border-top:4px solid ;
+    /* color: #fff; */
+    background: -webkit-linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+}

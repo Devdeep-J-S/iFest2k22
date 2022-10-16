@@ -5,43 +5,46 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 
 <body>
-<div class="login-container">
-<div class="main-container">
-<div class="box">
-<span class="span1"></span>
-<span class="span2"></span>
-<div class="content">
-    <h1 style="font-weight: 700;">Login</h1>
-    {% if messages %}
-    {% for message in messages %}
-        <h6 id="message">{{ message }}</h6>
-    {% endfor %}
-{% endif %}
-  <form method="POST">
-    {% csrf_token %}
-    <div class="input-field">
-        <label for="user_name">UserName:</label>
-        <input name="username" type="text" id="user_name" maxlength="50" required>
-    </div>
-      <div class="input-field">
-        <label for="email">Email:</label>
-        <input name="email" type="email" id="email" maxlength="50" required>
-    </div>
-    <div class="input-field">
-        <label for="user_password">Password:</label>
-        <input type="password" id="user_password" name="password" maxlength="50" required>
-    </div>
-    <button type="submit" class="login-btn">Log in</button>
-      <a href="{% url 'reset_password' %}" class="forgot-pwd-btn">Forgot password?</a>
-      <br />
-      <div class="signup-btn">
-          New to the app? <a href="{% url 'signup' %}">Sign up</a>
+  <div class="shape shape-t"></div>
+  <div class="shape shape-b"></div>
+    <div class="container h-100">
+      <div class="row h-100 m-auto form-cont">
+          <form class="forms p-5 m-auto" method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+              <h3 class="form-heading">Login</h3>
+              <div class="text-danger text-center">
+                {% if messages %}
+                  {% for message in messages %}
+                    <h6>{{ message }}</h6>
+                  {% endfor %}
+              {% endif %}
+              </div>
+            </div>
+    
+            <div class="mb-3">
+              <!-- <label for="username">Email</label> -->
+              <input type="text" class="form-control" placeholder="Email" id="email" name="email" required>
+            </div>
+    
+    
+            <div class="section space mb-2">
+                <!-- <label class="input-box-1" for="password">Password</label> -->
+                <input type="password"  class="form-control pass" name="password" required placeholder="Password">
+            </div>
+    
+            <div class="forgot-pass mb-4">
+              <a href="{% url 'reset_password' %}" class="forgot-pwd-btn" style="text-decoration: none;">Forgot password?</a><br />
+            </div>
+    
+            <button class="btn btn-primary mb-4"><b>Login</b></button>
+    
+            <div class="not-registered">
+                Not registered yet? <a href="{% url 'signup' %}" style="text-decoration: none;">Sign up</a>
+            </div>
+          </form>
       </div>
-  </form>
-</div>
-</div>
-</div>
-</div>
+    </div>
 </body>
 
 {% endblock %}

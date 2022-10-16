@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Nasalization;
+  src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+  color: #ffffff;
+}
+
+body{ 
+  background-image: url(../images/bg.svg);
+  color: rgb(255, 255, 255);
+  height: 100%;
+}
+
+.banner{
+  position: relative;
+  overflow: clip;
+}
+
+.logo-banner{
+  position: absolute;
+  top: 0;
+  margin-top: 75px;
+  width: 450px;
+  max-width: 80%;
+}
+
+.svg-banner{
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+}
+
+
+@media only screen and (max-width: 575.98px) {
+  .logo-banner{
+    margin-top: 150px;
+  }
+
+  .svg-banner{
+    width: 170%;
+  }
+}

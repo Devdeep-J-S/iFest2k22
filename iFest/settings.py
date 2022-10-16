@@ -118,11 +118,11 @@ STATIC_URL = 'static/'
 
 MEDIA_URL = 'images/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 
 # Default primary key field type
@@ -133,11 +133,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
-RAZOR_KEY_ID = 'rzp_live_VPTezL4PBzkf7t'
-RAZOR_KEY_SECRET = 'A2OPZ1uc6mYbVklMAQS9uFx4'
+RAZOR_KEY_ID = 'rzp_live_lhmCmyCN8KlZzU'
+RAZOR_KEY_SECRET = 'CJtNns2Iehrn8sAjdTirGJrK'
 
-#RAZOR_KEY_ID = 'rzp_live_PMF10rsYmShqQD'
-#RAZOR_KEY_SECRET =  'VQXmiwoMbftj8lFiaP6nf9r0'
 
 FACEBOOK_PIXEL_CODE_ID = '532727481054924'
 

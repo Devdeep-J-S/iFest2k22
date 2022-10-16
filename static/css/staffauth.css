@@ -1,0 +1,119 @@
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+  
+*{
+    font-family: 'Saira', sans-serif;
+    color: #ffffff;
+}
+
+html{
+    height: 100%;
+}
+
+body{ 
+    background-image: url(../images/bg.svg);
+    color: rgb(255, 255, 255);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.shape{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: -5;
+    position: fixed;
+}
+.shape-t{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    transform: translate(-180%, -150%);
+    top: 50%;
+    left: 50%;
+}
+.shape-b{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    transform: translate(90%, 60%);
+    top: 50%;
+    left: 50%;
+}
+
+
+
+/* ---------------------------FORM CSS ------------------------------*/
+.forms{
+    width: 500px;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.35);
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.15);
+}
+
+
+.form-heading{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 42px;
+    text-align: center;
+}
+
+.input-box-1{
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 45px;
+    background-color: rgba(255,255,255,0.05) !important;
+    border-radius: 3px;
+    color: #ffffff !important;
+}
+
+.btn-dark{
+    width: 100%;
+    background-color: #d400d4 !important;
+    cursor: pointer;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+
+.btn-primary{
+    width: 100%;
+    cursor: pointer;
+    height: 45px;
+    border-radius: 20px;
+}
+
+
+.show {
+    position: absolute;
+    right: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(251, 249, 249);
+    display: none;
+    cursor: pointer;
+}
+.pass:valid~.show {
+    display: block;
+}
+
+@media only screen and (max-width: 300.98px) {
+    .form-heading{
+        font-size: 24px;
+    }
+    .forms{
+        font-size: 12px;
+    }
+    .cbtn{
+        font-size: 12px;
+    }
+  }

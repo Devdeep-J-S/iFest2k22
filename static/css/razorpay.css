@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+  
+*{
+    font-family: 'Saira', sans-serif;
+    color: #ffffff;
+}
+
+body{ 
+    background-image: url(../images/bg.svg);
+    color: rgb(255, 255, 255);
+    height: 100%;
+}

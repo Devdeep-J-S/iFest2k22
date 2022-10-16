@@ -1,3 +1,4 @@
+from email.policy import default
 from unittest.util import _MAX_LENGTH
 from django.core.validators import MaxValueValidator
 from django.db import models
@@ -23,6 +24,7 @@ class Profile(models.Model):
     ieee_id = models.CharField(max_length=10, null=True, blank=True)
     referral_code = models.CharField(max_length=12, null=True, blank=True)
     staffAuth = models.CharField(max_length=100, null=True, blank=True)
+    gold = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username

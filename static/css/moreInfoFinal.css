@@ -1,14 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Courier Prime", monospace;
+@font-face {
+  font-family: Nasalization;
+  src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+  color: #ffffff;
 }
 
-body {
-  margin: 0;
-  box-sizing: border-box;
-  background: #222;
+body{ 
+  background-image: url(../images/bg.svg);
+  color: rgb(255, 255, 255);
+  height: 100%;
 }
+
+h1{
+  font-size: 4rem;
+  letter-spacing: 4px;
+  font-family: 'Saira', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #030f33;
+  background: linear-gradient(#48B1CB 15%, #0F5CCC 55%,  #AC48A9 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 8px transparent;
+}
+
+h2{
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Saira', sans-serif;
+  text-align: center;
+  text-shadow: 4px 4px 4px rgb(133, 1, 151);
+}
+
+
 .mInfo-main {
   width: 100%;
   overflow: hidden;
@@ -17,12 +45,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
-  padding-right: 8px;
-  padding-top: 10px;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 20px;
 }
 /* Common for multiple portions */
 
@@ -32,8 +54,6 @@ body {
 .round-info,
 .event-prize,
 .event-registeration {
-  line-height: 1.5em;
-  font-size: 1em;
   height: fit-content;
   color: white;
   display: flex;
@@ -56,94 +76,7 @@ body {
   display: block; /* remove extra space below image */
 }
 
-.round-heading {
-  border: 2px solid white;
-  background-color: transparent;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  padding: 5px;
-  cursor: pointer;
-  color: whitesmoke;
-  width: 18%;
-  display: block;
-}
-.round-heading:hover {
-  transition: all 0.3s ease-in-out;
-  color: #fff;
-  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
-    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
-  animation: btn-registeration-animations 0.7s ease-in 0.1s 1 forwards;
-}
 
-.round-link {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding-left: 20px;
-}
-.round-rules-description {
-  padding-left: 25px;
-}
-.round-rules {
-  padding-top: 10px;
-  padding-left: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.judging-criteria {
-  padding-top: 20px;
-  padding-left: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.judging-points {
-  padding-left: 25px;
-}
-.round-venue {
-  padding-top: 20px;
-  padding-left: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.round-time,
-.round-date,
-.round-contact {
-  padding-top: 10px;
-  padding-left: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.round-contact-list {
-  padding-left: 25px;
-}
-
-.prizemoney {
-  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
-    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
-  font-size: 1.2rem;
-  padding-left: 25px;
-}
-
-.btn-registeration {
-  border: 2px solid white;
-  background-color: transparent;
-  border-radius: 10px;
-  font-size: 1rem;
-  padding: 5px;
-  cursor: pointer;
-  color: whitesmoke;
-  width: 30%;
-  display: block;
-  margin: auto;
-  align-items: center;
-}
-.btn-registeration:hover {
-  transition: all 0.3s ease-in-out;
-  color: #fff;
-  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
-    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
-  animation: btn-registeration-animation 0.7s ease-in 0.1s 1 forwards;
-}
 
 @keyframes btn-registeration-animation {
   100% {
@@ -160,64 +93,6 @@ body {
   }
 }
 
-.event-name-heading {
-  text-align: center;
-  color: #eee;
-  font-family: "Orbitron", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
-    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
-  margin-bottom: 1em;
-  margin-top: 3px;
-}
-.event-info-heading,
-.event-generalrules-heading,
-.prize-heading,
-.event-registeration-heading,
-.text-red {
-  text-align: center;
-  color: #eee;
-  font-family: "Orbitron", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: 2rem;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px rgb(97, 94, 94),
-    0 0 40px rgb(47, 0, 255), 0 0 80px rgb(47, 0, 255), 0 0 90px rgb(47, 0, 255),
-    0 0 100px rgb(47, 0, 255), 0 0 150px rgb(47, 0, 255);
-  margin-bottom: 0.7em;
-  margin-top: 1.2em;
-}
-
-.event-rounds-heading {
-  text-align: center;
-  color: #eee;
-  font-family: "Orbitron", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: 2.2rem;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px rgb(97, 94, 94),
-    0 0 40px rgb(47, 0, 255), 0 0 80px rgb(47, 0, 255), 0 0 90px rgb(47, 0, 255),
-    0 0 100px rgb(47, 0, 255), 0 0 150px rgb(47, 0, 255);
-  margin-bottom: 0.7em;
-  margin-top: 1.5em;
-}
-
-/* Registeration closed */
-
-.text-red {
-  margin-bottom: 0.7em;
-  margin-top: 1.2em;
-  text-align: center;
-  color: red;
-}
-.blink-hard {
-  animation: blinker 1s step-end infinite;
-}
 @keyframes blinker {
   50% {
     opacity: 0;
@@ -228,18 +103,10 @@ p {
   padding-bottom: 5px;
 }
 
-li {
-  margin: 0;
-  top: 0;
-  left: 0;
-  padding: 0 5px 0px 30px;
-  list-style: none;
-  background-image: url("/static/images/outline_star_white_18dp.png");
-
-  background-repeat: no-repeat;
-  background-position: 0% 5%;
-  background-size: 17px;
+.mInfo-main ul{
+  list-style-type: none !important;
 }
+
 
 a {
   text-decoration: none;
@@ -262,4 +129,13 @@ a {
     align-items: center;
     margin: auto;
   }
+}
+
+
+.event-registeration .btn{
+  height: 45px;
+  border-radius: 20px;
+  width: 25%;
+  font-weight: bold;
+  min-width: 100px;
 }

@@ -1,0 +1,325 @@
+@import url(//db.onlinewebfonts.com/c/f88cd11de6d9aa48ddc14cf6181b309c?family=Nasalization);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root {
+    --text1: 'Open Sans', sans-serif;
+}
+
+/* body {
+
+    background-image: url(./Images/Group\ 1072.svg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+} */
+
+.vf {
+
+    display: flexbox;
+    justify-items: center;
+
+}
+
+
+.vf_text1 {
+
+    margin: 4vw;
+    font-family: "nasalization";
+    background: linear-gradient(90deg,
+            #48B1CB,
+            #0F5CCC,
+            #e100da);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 500%;
+
+
+}
+
+.vf_text2 {
+
+    margin-top: 0%;
+    margin-bottom: 90px;
+    font-family: "nasalization";
+
+    background: linear-gradient(90deg,
+            #48B1CB,
+            #0F5CCC 40%,
+            #e100da);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+.vf_img {
+    width: 70%;
+    /* edit   margin-top:-15% ; */
+}
+
+.navbar {
+
+    margin-top: 20px;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.miditems li {
+
+    margin-left: 4vw;
+}
+
+.navbar-right {
+
+    background-image: url(./Images/Group\ 1.svg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: contain;
+
+    width: 190px;
+    font-size: 90%;
+    justify-content: center;
+    align-content: center;
+
+
+    /* width: 13.1vw !important;
+    text-align: center;
+    padding: 15px !important; */
+
+}
+
+.register {
+    margin-left: 40%;
+    color: white !important;
+    font-size: 15px;
+}
+
+.home {
+    background: linear-gradient(90deg,
+            #48B1CB,
+            #0F5CCC,
+            #e100da);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+
+}
+
+footer {
+
+    padding: 25px;
+}
+
+
+
+
+.info {
+
+    border: solid;
+}
+
+.text {
+
+    border: solid;
+    margin: 10vh;
+    height: 30vw;
+}
+
+.text2 {
+    border: solid;
+    margin: 10vh;
+    height: 30vw;
+
+}
+
+.image {
+    margin: 10vh;
+    height: 30vw;
+}
+
+.gallery {
+
+    height: 500px;
+    /* border: solid; */
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+
+.front-text {
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    font-size: 50px;
+    /* font-size: 4vw; */
+    /* position: absolute;
+    top: 122%;
+    z-index: 3; */
+    position: absolute;
+    margin-bottom: 2%;
+}
+
+
+.fb-text1 {
+    display: flex;
+    margin-top: 10vh;
+    align-items: flex-end;
+    margin-left: 7%;
+}
+.fb-text2 {
+
+    display: flex;
+    justify-content: right;
+    margin-right: 7%;
+    margin-top: 2vh;
+    align-items: flex-end;
+}
+.cont1 {
+    display: flexbox;
+    margin-top: 0%;
+    justify-items: center;
+}
+
+.abso {
+    position: absolute;
+    width: 100%;
+    height: 87%;
+    opacity: 20%;
+    margin-left: -13%;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.abso3 {
+    opacity: 60%;
+}
+
+.gr-element {
+    border: double 2px transparent;
+    border-radius: 0px 30px 0px 30px;
+    background-image: linear-gradient(white, white),
+        linear-gradient(90deg, #48B1CB, #0F5CCC, #e100da);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    width: 200px;
+    height: 200px;
+    margin-left:3vw ;
+    margin-right:3vw ;
+}
+.gallery-row
+{
+    display: flex;
+}
+.gr-pl
+{
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+.ft-line
+{
+    height: 3px;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background: linear-gradient(
+        90deg, #48B1CB, #0F5CCC, #e100da
+    );
+}
+.ft-text
+{
+    display: flex;
+    margin-left: 3vw;
+    margin-right: 3vw;
+
+}
+.ft-text p
+{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background: linear-gradient(90deg,
+    #48B1CB,
+    #0F5CCC 40%,
+    #e100da);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+font-size: 2rem;
+}
+.logo1
+{
+    scale: 0.5;
+    margin-top: -13vh;
+    /* margin-right: -20vh; */
+    margin-left: 5%;
+}
+#demo
+{
+        text-align: center;
+        margin-top: 0px;
+        background: linear-gradient(90deg,
+        #48B1CB,
+        #0F5CCC,
+        #e100da);
+-webkit-background-clip: text;
+-webkit-text-stroke: 8px transparent;
+font-family: "nasalization";
+font-size: 60px;
+}
+/*****************About-us-container*****************/
+.about_cont{
+    
+    display: flex;
+    margin-left: 7% !important;
+    margin-right: 7% !important;
+
+}
+
+
+.about_text1 {
+
+    display: flex;
+    justify-self: left;
+    color: white;
+    font-size: larger;
+    width: 50vw;
+    text-align: left;
+    margin-top: 5vw;
+
+}
+
+.about_img1 {
+    display: flex;
+    justify-self: right;
+    background-color: transparent;
+    width: 60vw;
+    margin-left: 3%;
+    
+}
+
+.about_text2 {
+
+    display: flex;
+    color: white;
+    width: 60vw;
+    margin-left: 10%;
+    text-align: right;
+    justify-items: right !important;
+}
+
+.about_img2 {
+    display: flex;
+    justify-self: left;
+    background-color: transparent;
+    margin-top: 3vw;
+    width: 30vw;
+
+}
+/***************************************/
+
+
+.text2 {
+    border: solid;
+    margin: 10vh;
+    height: 30vw;
+
+}

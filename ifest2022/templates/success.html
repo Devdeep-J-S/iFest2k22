@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/success.css' %}">
+
+<body>
+  <div class="shape shape-t"></div>
+  <div class="shape shape-b"></div>
+    <div class="container h-100">
+      <div class="row h-100 m-auto form-cont">
+            <div class="box p-5 m-auto">
+                <div class="mb-4">
+                <h3 class="form-heading">Registration Successful !</h3>
+                </div>
+                <div class="mb-4">
+                    <p>
+                        Kudos! You have been successfully registered for i.Fest '22!<br><br>
+                        Have fun competing in thrilling events, and enjoy the second weekend of November!<br><br>
+                        Save the Dates: 11-12-13 November '22
+                    </p>
+                    
+                </div>
+                
+                <a class="cbtn btn btn-primary mx-auto" href="{% url 'login_page' %}"><b>Go To Login Page</b></a>
+            </div>
+      </div>
+    </div>
+</body>
+
+{% endblock %}

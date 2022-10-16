@@ -1,306 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier Prime', monospace;
-    box-sizing: border-box;
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+  
+*{
+    font-family: 'Saira', sans-serif;
+    color: #ffffff;
 }
 
-#bg-stars {
-    overflow-y: hidden;
+html{
+    height: 100%;
 }
 
-.footer-container{
-    display: none;
+body{ 
+    background-image: url(../images/bg.svg);
+    color: rgb(255, 255, 255);
+    height: 100%;
+    overflow-x: hidden;
 }
 
-h1,
-h6 {
-    font-family: 'Orbitron', sans-serif;
+.shape{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: -5;
+    position: fixed;
+}
+.shape-t{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    transform: translate(-170%, -160%);
+    top: 50%;
+    left: 50%;
+}
+.shape-b{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    transform: translate(80%, 60%);
+    top: 50%;
+    left: 50%;
+}
+
+
+
+/* ---------------------------FORM CSS ------------------------------*/
+.forms{
+    width: 500px;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.35);
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.15);
+}
+
+
+.form-heading{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 42px;
     text-align: center;
-    padding-top: 0px;
-    /* padding-bottom: 0.5rem; */
 }
 
-h1 {
-    font-size: 2em;
-}
-
-.signup {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    max-height: 100vh;
-}
-
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    padding: 40px 0;
-}
-
-.main-container .box {
-    position: relative;
-    width: 400px;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 30px;
-}
-
-.main-container .box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50px;
-    width: 100%;
-    height: 100%;
-    background: white;
-    border-radius: 8px;
-}
-
-.main-container .box::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50px;
-    width: 100%;
-    height: 100%;
-    background: white;
-    border-radius: 8px;
-    filter: blur(30px);
-}
-
-.main-container .box:nth-child(1)::before,
-.main-container .box:nth-child(1)::after {
-    background: linear-gradient(90deg, #0a2351, #6cb4ee, #0a2351);
-}
-
-.main-container .box .span1 {
+.input-box-1{
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 50;
-    pointer-events: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 45px;
+    background-color: rgba(255,255,255,0.05) !important;
+    border-radius: 3px;
+    color: #ffffff !important;
 }
 
-.main-container .box .span1::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    height: 60px;
-    width: 60px;
-    background-color: #bbb;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px, rgba(0, 0, 0, 0.05);
-}
-
-@keyframes animate {
-    0%,
-    100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(2);
-    }
-}
-
-.main-container .box .span1::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -80px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px, rgba(0, 0, 0, 0.05);
-    animation-delay: -1s;
-}
-
-.main-container .box .content {
-    position: relative;
-    top: 20px;
-    left: 10px;
-    width: 400px;
-    height: fit-content;
-    padding: 10px 40px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 5px 15px rgba(151, 122, 122, 0.1);
-    border-radius: 4px;
-    backdrop-filter: blur(10px);
-    transition: 0.5s;
-    color: white;
-    z-index: 1;
-}
-
-.main-container .box .content  p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.5em;
+.btn-dark{
     width: 100%;
-    margin: 0.5em auto;
-}
-
-.main-container .box .content  p .inputs {
-    height: 2em;
-    outline: none;
-    cursor: text;
-    font-weight: 600;
-    width: auto;
-}
-
-.label {
-    font-size: 1em;
-    font-weight: 800;
-}
-
-.btn-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.back-btn {
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    font-size: 0.9em;
-    padding: 0.4em 1em;
-    width: 40%;
-    transition: all 0.5s ease-in-out;
-    border-radius: 0.2em;
-    margin: 1em 0.3em;
-    border: 1px solid white;
-}
-.back-btn a
-{
-    text-decoration: none;
-    color:black;
-}
-.submit-btn {
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    font-size: 0.9em;
-    padding: 0.4em 1em;
-    width: 40%;
-    transition: all 0.5s ease-in-out;
-    border-radius: 0.2em;
-    margin: 1em 1.5em;
-    border: 1px solid white;
-}
-
-.back-btn:hover {
-    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.5),
-        0 2px 10px 0px rgba(0, 0, 0, 0.8);
-    font-weight: 900;
-    border: 1px solid white;
-    letter-spacing: 0.15em;
-}
-.submit-btn:hover {
-    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.5),
-        0 2px 10px 0px rgba(0, 0, 0, 0.8);
-    font-weight: 900;
-    border: 1px solid white;
-    letter-spacing: 0.15em;
-}
-
-.formerrors {
+    background-color: #d400d4 !important;
+    cursor: pointer;
+    height: 45px;
     display: flex;
     justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 20px;
 }
 
-/* MEDIA QUERIES */
-
-@media only screen and (max-width: 480px) {
-    .main-container .box {
-        width: 320px;
-        height: max-content;
-        left: 0;
-    }
-    .main-container .box::before,
-    .main-container .box::after {
-        left: 0;
-    }
-    .main-container .box .content {
-        width: 360px;
-        font-size: 0.8em;
-        top: 0;
-        height: max-content;
-        left: 0;
-    }
-    .main-container .box .content .subcontent-container .subcontent p {
-        display: block;
-        padding-bottom: 0.8em;
-        width: 100%;
-        margin: 0.5em auto;
-    }
-    .main-container .box .content .subcontent-container .subcontent p .inputs {
-        width: 100%;
-    }
-    .main-container .box .content::after {
-        left: 0;
-    }
-    .main-container .box .span1,
-    .main-container .box .span2 {
-        display: none;
-    }
-    .main-container .box .content .subcontent-container .subcontent .next-cont {
-        display: flex;
-        justify-content: center;
-    }
+.btn-primary{
+    width: 100%;
+    cursor: pointer;
+    height: 45px;
+    border-radius: 20px;
 }
 
-@media (orientation: landscape) {
-    #bg-stars {
-        overflow-y: auto;
-    }
+
+.show {
+    position: absolute;
+    right: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(251, 249, 249);
+    display: none;
+    cursor: pointer;
+}
+.pass:valid~.show {
+    display: block;
 }
 
-@media only screen and (max-width: 300px) {
-    .main-container .box {
-        width: 250px;
-        height: fit-content;
-        left: 0;
-    }
-    .main-container .box .content {
-        width: 280px;
-        font-size: 0.8em;
-        top: 0;
-        height: fit-content;
-        left: 0;
-    }
-    .main-container .box .content .subcontent-container .subcontent p {
-        display: block;
-        padding-bottom: 0.8em;
-        width: 100%;
-        margin: 0.5em auto;
-    }
-    .register-btn,
-    .back-btn {
-        width: max-content;
-    }
-}
-
-@media (max-height: 480px) and (orientation: landscape) {
-    #bg-stars {
-        overflow-y: auto;
-    }
-}

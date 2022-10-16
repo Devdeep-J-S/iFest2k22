@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <!--Stylesheet-->
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form class="forms">
+        <h3 class="form-heading">Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email" id="username">
+
+
+        <div class="section space">
+            <label class="input-box-1"for="password">Password</label>
+            <input type="password" class="pass" required placeholder="Password">
+            <!-- <span class="show">SHOW</span> -->
+        </div>
+
+        <div class="forgot-pass">
+        <a href="{% url 'reset_password' %}" class="forgot-pwd-btn">Forgot password?</a><br />
+        </div>
+
+        <button class="btn">Log In</button>
+
+        <div class="not-registered">
+            Not registered yet? <a href="{% url 'signup' %}">Sign up</a>
+        </div>
+    </form>
+</body>
+
+</html>

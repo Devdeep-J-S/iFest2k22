@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
 
 
-.body{
+html, body{
     background-color: black;
+    height: 100%;
 }
 
-.container-fluid{
+.container-fluid {
     background-color: black;
-    height: 100vh !important;
+    height: 100% !important;
     overflow: hidden;
 }
 
 .overlay-cont{
     position: relative;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -44,7 +45,7 @@
 }
 
 
-#VR{ 
+#VR{
     position: absolute;
     z-index: 2;
     animation: followpath 5s infinite alternate ease-in-out;
@@ -84,12 +85,12 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border:2px solid transparent; 
+    border:2px solid transparent;
      -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
     transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
 }
 
-  
+
 .btn6::before {
     content: '';
     position: absolute;
@@ -104,11 +105,11 @@
     -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
     transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
   }
-  
+
   .btn6:hover::before {
     width:100%;
   }
-  
+
   .btn6::after {
     content: '';
     position: absolute;
@@ -158,17 +159,17 @@
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    animation: 
+    animation:
     typing 2.5s steps(20, end),
     blink-caret .75s step-end infinite;
   }
-  
+
   /* The typing effect */
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
-  
+
   /* The typewriter cursor effect */
   @keyframes blink-caret {
     from, to { border-color: transparent }

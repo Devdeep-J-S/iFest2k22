@@ -1,0 +1,133 @@
+body{
+    background-image: url(./images/Group\ 1072.svg);
+    
+}
+.background{
+    width: 600px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    /* background-color:#bc4ffd ; */
+    left: -60px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    /* background-color:#3ea3cb ; */
+    right: -50px;
+    bottom: -80px;
+}
+
+
+
+/* ---------------------------FORM CSS ------------------------------*/
+.forms{
+    height: 520px;
+    width: 400px;
+    background-color: #000000;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    /* backdrop-filter: blur(10px); */
+    border: 2px solid rgba(170, 20, 20, 0.1);
+    /* box-shadow: 0 0 40px rgba(25, 8, 156, 0.6); */
+    padding: 50px 35px;
+    z-index: +1;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+
+}
+
+.form-heading{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    font-family: 'nasalization';
+}
+
+.input-box-1{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    /* background-image: linear-gr  dient(to bottom right, #41a6cb, #105bcb, #9e49ab); */
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.show {
+    position: absolute;
+    right: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(251, 249, 249);
+    display: none;
+    cursor: pointer;
+}
+.pass:valid~.show {
+    display: block;
+}
+
+/* Forgot Password link CSS */
+.forgot-pass{
+    position: relative;
+    text-align: right;
+}
+
+.forgot-pwd-btn {
+    
+    width: 100%;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+   
+}
+
+/* Not Registered Link CSS */
+.not-registered{
+    margin-top: 20px;
+}

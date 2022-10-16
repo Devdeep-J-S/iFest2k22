@@ -1,89 +1,48 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  /*background-color: black;*/
-  color: whitesmoke;
+@font-face {
+  font-family: Nasalization;
+  src: url(../fonts/nasalization-rg.otf);
 }
-.container {
-  /* border: 2px solid red; */
-  /* width: 100vw;
-    height: 100vh; */
-  padding: 2%;
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+  color: #ffffff;
 }
-.outerbox {
-  box-shadow: 0px 0px 25px 2px #cdedfa;
-  border-radius: 10px;
-  margin: 5%;
-  margin-bottom: 10%;
-  padding: 2%;
+
+body{ 
+  background-image: url(../images/bg.svg);
+  color: rgb(255, 255, 255);
+  height: 100%;
 }
-.sponsorbox {
-  /* width: 90vw; */
-  margin: 2%;
-  padding: 1.5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.sponsorheading {
+
+.heading h1{
+  font-size: 4rem;
+  letter-spacing: 4px;
+  font-family: 'Saira', sans-serif;
+  font-weight: bold;
   text-align: center;
-  font-size: 3rem;
-  margin: 5px;
-  padding: 5px;
-
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px rgb(97, 94, 94),
-    0 0 40px rgb(47, 0, 255), 0 0 80px rgb(47, 0, 255), 0 0 90px rgb(47, 0, 255),
-    0 0 100px rgb(47, 0, 255), 0 0 150px rgb(47, 0, 255);
-}
-.sponsorheading p {
-  color: -webkit-linear-gradient(#eee, #333);
-}
-.sponsor {
-  height: 10em;
-  width: 15em;
-  margin: 25px;
-  padding: 10px;
-  /*  */
-  /* border:1px solid red;
-    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px red,
-    0 0 20px red; */
-  border: 2px solid whitesmoke;
-  border-radius: 5px;
-  background-color: whitesmoke;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.sponsor:hover {
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 30px 1px whitesmoke;
-}
-.sponsor img {
-  /* background-color: whitesmoke; */
-
-  max-width: 100%;
-  height: auto;
-  /* align-self: center; */
-  background-color: whitesmoke;
-}
-#notperfectimage {
-  height: 150px;
-  width: 150px;
+  color: #030f33;
+  background: linear-gradient(#48B1CB 15%, #0F5CCC 55%,  #AC48A9 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 8px transparent;
 }
 
-@media only screen and (min-width: 950px) {
-  .smallbox {
-    display: flex;
-    /* flex-wrap: wrap; */
 
-    flex-direction: row;
+h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 768px) {
+  .heading h1{
+      font-size: 3rem;
+      letter-spacing: 2px;
   }
-  #smallouterbox {
-    width: 45%;
-    margin-left: 2%;
-    margin-right: 2%;
+  h2{
+    font-size: 1.8rem;
   }
 }
+
+

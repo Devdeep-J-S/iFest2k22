@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+  
+*{
+    font-family: 'Saira', sans-serif;
+    color: #ffffff;
+}
+
+html{
+    height: 100%;
+}
+
+body{ 
+    background-image: url(../images/bg.svg);
+    color: rgb(255, 255, 255);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+h3{
+    font-weight: bold;
+}
+
+.shape{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: -5;
+    position: fixed;
+}
+.shape-t{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    transform: translate(-150%, -160%);
+    top: 50%;
+    left: 50%;
+}
+.shape-b{
+    background: linear-gradient(#48B1CB, #0F5CCC,  #AC48A9 );
+    transform: translate(60%, 60%);
+    top: 50%;
+    left: 50%;
+}
+
+
+.box{
+    width: 450px;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.35);
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.15);
+}
+
+.cbtn {
+    width: 100%;
+    border-radius: 20px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+
+@media only screen and (max-width: 300.98px) {
+    .box{
+        font-size: 12px ;
+    }
+    .cbtn{
+        font-size: 12px;
+    }
+  }

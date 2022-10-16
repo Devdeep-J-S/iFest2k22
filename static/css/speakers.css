@@ -1,202 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
- * {
-	 box-sizing: border-box;
-	 margin: 0;
+@font-face {
+  font-family: Nasalization;
+  src: url(../fonts/nasalization-rg.otf);
 }
- html, body {
-	 margin: 0;
-	 background: black;
-	 font-family: 'Montserrat', helvetica, arial, sans-serif;
-	 font-size: 14px;
-	 font-weight: 400;
-}
- .speaker_card {
-	 position: relative;
-	 display: block;
-	 width: 800px;
-	 height: fit-content;
-	 margin: 100px auto;
-	 overflow: hidden;
-	 border-radius: 10px;
-	 transition: all 0.4s;
-}
- .speaker_card:hover {
-	 transform: scale(1.02);
-	 transition: all 0.4s;
-}
- .speaker_card .info_section {
-	 position: relative;
-	 width: 100%;
-	 height: 100%;
-	 background-blend-mode: multiply;
-	 z-index: 2;
-	 border-radius: 10px;
-}
- .speaker_card .info_section .speaker_header {
-	 position: relative;
-	 padding: 25px;
-	 height: 40%;
-}
- .speaker_card .info_section .speaker_header h1 {
-	 color: #fff;
-	 font-weight: 400;
-}
- .speaker_card .info_section .speaker_header h4 {
-	 color: #9ac7fa;
-	 font-weight: 400;
-}
- .speaker_card .info_section .speaker_header .minutes {
-	 display: inline-block;
-	 margin-top: 10px;
-	 color: #fff;
-	 padding: 5px;
-	 border-radius: 5px;
-	 border: 1px solid rgba(255, 255, 255, 0.13);
-}
- .speaker_card .info_section .speaker_header .type {
-	 display: inline-block;
-	 color: #cee4fd;
-	 margin-left: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+  color: #ffffff;
 }
 
- .speaker_card .info_section .speaker_desc {
-	 padding: 25px;
-	 height: 50%;
-}
- .speaker_card .info_section .speaker_desc .text {
-	 color: #cfd6e1;
-}
- .speaker_card .info_section .speaker_social {
-	 height: 10%;
-	 padding-left: 15px;
-	 padding-bottom: 20px;
-}
- .speaker_card .info_section .speaker_social ul {
-	 list-style: none;
-	 padding: 0;
-}
- /* .speaker_card .info_section .speaker_social ul li {
-	 display: inline-block;
-	 color: rgba(255, 255, 255, 0.4);
-	 transition: color 0.3s;
-	 transition-delay: 0.15s;
-	 margin: 0 10px;
-} */
- .speaker_card .info_section .speaker_social ul li a{
-	 display: inline-block;
-	 color: rgba(255, 255, 255, 0.4);
-	 transition: color 0.3s;
-	 transition-delay: 0.15s;
-	 margin: 0 10px;
-}
- /* .speaker_card .info_section .speaker_social ul li:hover {
-	 transition: color 0.3s;
-	 color: rgba(255, 255, 255, 0.8);
-} */
- .speaker_card .info_section .speaker_social ul li a:hover {
-	 transition: color 0.3s;
-	 color: rgba(255, 255, 255, 0.8);
-}
- .speaker_card .info_section .speaker_social ul li i {
-	 font-size: 19px;
-	 cursor: pointer;
-}
- .speaker_card .blur_back {
-	 position: absolute;
-	 top: 0;
-	 z-index: 1;
-	 height: 100%;
-	 right: 0;
-	 background-size: cover;
-	 background-position: 100% 15% !important;
-	 background-repeat: no-repeat;
-	 border-radius: 11px;
+body{ 
+  background-image: url(../images/bg.svg);
+  color: rgb(255, 255, 255);
+  height: 100%;
 }
 
- @media screen and (min-width: 768px) {
-	 .speaker_header {
-		 width: 60%;
-	}
-	 .speaker_desc {
-		 width: 50%;
-	}
-	 .info_section {
-		 background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
-	}
-	 .blur_back {
-		 width: 80%;
-		 background-position: -100% 10% !important;
-	}
-}
- @media screen and (max-width: 768px) {
-	 .speaker_card {
-		 width: 95%;
-		 margin: 70px auto;
-		 min-height: 350px;
-		 height: auto;
-	}
-	 .blur_back {
-		 width: 100%;
-		 background-position: 50% 50% !important;
-	}
-	 .speaker_header {
-		 width: 100%;
-		 margin-top: 85px;
-	}
-	 .speaker_desc {
-		 width: 100%;
-	}
-	 .info_section {
-		 background: linear-gradient(to top, #141413 50%, transparent 100%);
-		 display: inline-grid;
-	}
-}
- #one {
-	 box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
-}
- #one:hover {
-	 box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
-}
- .one_back {
-	 //background: url();
-}
- #two {
-	 box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
-}
- #two:hover {
-	 box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
-}
- .two_back {
-	 background: url(/static/images/Speakers/Anushree.JPG);
-}
- #three {
-	 box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
-}
- #three:hover {
-	 box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
-}
- .three_back {
-	 //background: url();
+.heading h1{
+  font-size: 4rem;
+  letter-spacing: 4px;
+  font-family: 'Saira', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #030f33;
+  background: linear-gradient(#48B1CB 15%, #0F5CCC 55%,  #AC48A9 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 8px transparent;
 }
 
- #four {
-	 box-shadow: 0px 0px 150px -45px rgba(31, 48, 204, 0.7);
-}
- #four:hover {
-	 box-shadow: 0px 0px 120px -55px rgba(31, 48, 204, 0.7);
-}
- .four_back {
-	 background: url(/static/images/Speakers/Mohit.JPEG);
+
+@media screen and (max-width: 768px) {
+  .heading h1{
+      font-size: 3rem;
+      letter-spacing: 2px;
+  }
 }
 
- #five {
-	 box-shadow: 0px 0px 150px -45px rgba(164, 31, 204, 0.7);
-	 margin-bottom: 200px;
+
+.box{
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.35);
+  border-radius: 20px;
+  border: 1px solid rgba( 255, 255, 255, 0.15);
 }
- #five:hover {
-	 box-shadow: 0px 0px 120px -55px rgba(164, 31, 204, 0.7);
-}
- .five_back {
-	 background: url(/static/images/Speakers/Harshveer.JPG);
-}
- 
